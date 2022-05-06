@@ -19,7 +19,8 @@ module.exports = {
                   }
             }),
       ],
-      title: 'Yearning 文档',
+      head: [['link', { rel: 'icon', href: '/images/favicon.png' }]],
+      title: 'Yearning Guide',
       description: 'Yearning官方使用文档',
       theme: defaultTheme({
             navbar: [
