@@ -1,0 +1,1 @@
+const e={key:"v-17d50ac1",path:"/guide/config/",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1651831376e3,contributors:[{name:"HenryYee",email:"henry@yearning.io",commits:1}]},filePathRelative:"guide/config/README.md"};export{e as data};

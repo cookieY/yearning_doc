@@ -1,0 +1,1 @@
+const e={key:"v-20cdb690",path:"/guide/get/order.html",title:"\u5DE5\u5355\u63D0\u4EA4",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1651831376e3,contributors:[{name:"HenryYee",email:"henry@yearning.io",commits:1}]},filePathRelative:"guide/get/order.md"};export{e as data};

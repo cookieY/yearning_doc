@@ -1,0 +1,1 @@
+const e={key:"v-22a39d25",path:"/about.html",title:"\u5173\u4E8E",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"\u514D\u8D23\u58F0\u660E",slug:"\u514D\u8D23\u58F0\u660E",children:[]}],git:{updatedTime:1651831376e3,contributors:[{name:"HenryYee",email:"henry@yearning.io",commits:1}]},filePathRelative:"about.md"};export{e as data};

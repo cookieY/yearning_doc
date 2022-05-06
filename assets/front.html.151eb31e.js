@@ -1,0 +1,1 @@
+const e={key:"v-58b0fdc3",path:"/dev/front.html",title:"Gemini-Next",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1651831376e3,contributors:[{name:"HenryYee",email:"henry@yearning.io",commits:1}]},filePathRelative:"dev/front.md"};export{e as data};

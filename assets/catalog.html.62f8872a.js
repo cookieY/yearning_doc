@@ -1,0 +1,1 @@
+const e={key:"v-5df3a113",path:"/dev/catalog.html",title:"Yearning-go",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1651831376e3,contributors:[{name:"HenryYee",email:"henry@yearning.io",commits:1}]},filePathRelative:"dev/catalog.md"};export{e as data};

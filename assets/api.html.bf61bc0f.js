@@ -1,0 +1,1 @@
+const e={key:"v-26861d9c",path:"/dev/api.html",title:"API",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1651831376e3,contributors:[{name:"HenryYee",email:"henry@yearning.io",commits:1}]},filePathRelative:"dev/api.md"};export{e as data};

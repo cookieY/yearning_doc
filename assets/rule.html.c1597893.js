@@ -1,0 +1,1 @@
+const e={key:"v-722b25bc",path:"/guide/config/rule.html",title:"\u5BA1\u6838\u89C4\u5219",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1651831376e3,contributors:[{name:"HenryYee",email:"henry@yearning.io",commits:1}]},filePathRelative:"guide/config/rule.md"};export{e as data};
