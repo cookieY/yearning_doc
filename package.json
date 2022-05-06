@@ -1,0 +1,20 @@
+{
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "name": "Yearning_doc",
+  "version": "1.0.0",
+  "description": "Awesome Yearning doc",
+  "main": "index.js",
+  "author": "Henry Yee",
+  "license": "MIT",
+  "devDependencies": {
+    "@vuepress/plugin-medium-zoom": "^2.0.0-beta.43",
+    "@vuepress/plugin-nprogress": "^2.0.0-beta.43",
+    "vuepress": "^2.0.0-beta.43"
+  },
+  "dependencies": {
+    "@vuepress/plugin-search": "^2.0.0-beta.43"
+  }
+}
