@@ -1,5 +1,6 @@
 ## 更新目录
 
+- [Yearning 3.0.0-RC9](/log.md#_2022-05-07-yearning-3-0-0-rc9)
 - [Yearning 3.0.0-RC8](/log.md#_2022-05-06-yearning-3-0-0-rc8)
 - [Yearning 3.0.0-RC7](/log.md#_2022-04-23-yearning-3-0-0-rc7)
 - [Yearning 2.3.5](/log.md#_2021-08-12-yearning-2-3-5)
@@ -34,7 +35,13 @@
 - [Yearning 2.0.0-RC2](/log.md#_2019-7-29-yearning-rc-v0-2-0)
 - [Yearning 2.0.0-RC1.1](/log.md#_2019-7-26-yearning-rc-v0-1-1)
 - [Yearning 2.0.0-RC1](/log.md#_2019-7-25-yearning-rc-v0-1-0)
-
+  
+## 2022-05-07 Yearning 3.0.0-RC9
++ 修复SQL美化后多出空格导致执行失败的问题
++ 优化相关按钮文案
++ 修复重新提交及回滚语句提交按钮显示异常的问题
++ 数据源测试连接新增loading
+  
 ## 2022-05-06 Yearning 3.0.0-RC8
 + 修复删除数据源文案提示错误
 + 新增工单同意确认提示框
