@@ -1,5 +1,6 @@
 ## 更新目录
 
+- [Yearning 3.0.0-RC10](/log.md#_2022-05-07-yearning-3-0-0-rc10)
 - [Yearning 3.0.0-RC9](/log.md#_2022-05-07-yearning-3-0-0-rc9)
 - [Yearning 3.0.0-RC8](/log.md#_2022-05-06-yearning-3-0-0-rc8)
 - [Yearning 3.0.0-RC7](/log.md#_2022-04-23-yearning-3-0-0-rc7)
@@ -35,6 +36,13 @@
 - [Yearning 2.0.0-RC2](/log.md#_2019-7-29-yearning-rc-v0-2-0)
 - [Yearning 2.0.0-RC1.1](/log.md#_2019-7-26-yearning-rc-v0-1-1)
 - [Yearning 2.0.0-RC1](/log.md#_2019-7-25-yearning-rc-v0-1-0)
+
+## 2022-05-09 Yearning 3.0.0-RC10
++ 新增DDL审核alter语句merge功能
++ 新增工单申请处选择框搜索功能
++ 新增主题更换功能 ->  顶部Header右侧 个人设置中 
++ 修复查询工单被审核人提前结束后，使用者无法返回查询入口的问题
+
   
 ## 2022-05-07 Yearning 3.0.0-RC9
 + 修复SQL美化后多出空格导致执行失败的问题
