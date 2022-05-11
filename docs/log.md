@@ -1,5 +1,6 @@
 ## 更新目录
 
+- [Yearning 3.0.0-RC10](/log.md#_2022-05-11-yearning-3-0-0-rc11)
 - [Yearning 3.0.0-RC10](/log.md#_2022-05-09-yearning-3-0-0-rc10)
 - [Yearning 3.0.0-RC9](/log.md#_2022-05-07-yearning-3-0-0-rc9)
 - [Yearning 3.0.0-RC8](/log.md#_2022-05-06-yearning-3-0-0-rc8)
@@ -36,6 +37,12 @@
 - [Yearning 2.0.0-RC2](/log.md#_2019-7-29-yearning-rc-v0-2-0)
 - [Yearning 2.0.0-RC1.1](/log.md#_2019-7-26-yearning-rc-v0-1-1)
 - [Yearning 2.0.0-RC1](/log.md#_2019-7-25-yearning-rc-v0-1-0)
+
+## 2022-05-11 Yearning 3.0.0-RC11
++ 优化普通主题显示效果
++ 修复建表必须拥有字段审核规则异常的问题
++ 修复退出后仍可通过后退操作进入系统的问题
++ 修复迁移工具panic问题
 
 ## 2022-05-09 Yearning 3.0.0-RC10
 + 新增DDL审核alter语句merge功能
