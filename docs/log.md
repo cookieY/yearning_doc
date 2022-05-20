@@ -1,5 +1,6 @@
 ## 更新目录
 
+- [Yearning 3.0.0-RC12](/log.md#_2022-05-20-yearning-3-0-0-rc12)
 - [Yearning 3.0.0-RC11](/log.md#_2022-05-11-yearning-3-0-0-rc11)
 - [Yearning 3.0.0-RC10](/log.md#_2022-05-09-yearning-3-0-0-rc10)
 - [Yearning 3.0.0-RC9](/log.md#_2022-05-07-yearning-3-0-0-rc9)
@@ -37,6 +38,16 @@
 - [Yearning 2.0.0-RC2](/log.md#_2019-7-29-yearning-rc-v0-2-0)
 - [Yearning 2.0.0-RC1.1](/log.md#_2019-7-26-yearning-rc-v0-1-1)
 - [Yearning 2.0.0-RC1](/log.md#_2019-7-25-yearning-rc-v0-1-0)
+
+## 2022-05-20 Yearning 3.0.0-RC12
++ 修复启动参数命令提示错误的问题 ( —config 提示为-config)
++ 修复登录页用户注册弹出框不会在注册后关闭的问题
++ 修复ddl语句默认值空字符串，不能通过校验检查
++ 修复varchar类型字段长度检测基于字节长度的问题
++ 修复DML/DDL 影响行数，不生效的问题
++ 修复SQL语句在不经检测依然可以审核同意的问题
++ 修复SQL检测后更改数据提交按钮没有禁用的问题
++  修复查询空闲等待时间过长导致连接异常中断的问题
 
 ## 2022-05-11 Yearning 3.0.0-RC11
 + 优化普通主题显示效果
