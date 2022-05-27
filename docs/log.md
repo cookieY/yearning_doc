@@ -1,5 +1,5 @@
 ## 更新目录
-
+- [Yearning 3.0.0-RC12](/log.md#_2022-05-27-yearning-3-0-0-rc13)
 - [Yearning 3.0.0-RC12](/log.md#_2022-05-20-yearning-3-0-0-rc12)
 - [Yearning 3.0.0-RC11](/log.md#_2022-05-11-yearning-3-0-0-rc11)
 - [Yearning 3.0.0-RC10](/log.md#_2022-05-09-yearning-3-0-0-rc10)
@@ -38,6 +38,15 @@
 - [Yearning 2.0.0-RC2](/log.md#_2019-7-29-yearning-rc-v0-2-0)
 - [Yearning 2.0.0-RC1.1](/log.md#_2019-7-26-yearning-rc-v0-1-1)
 - [Yearning 2.0.0-RC1](/log.md#_2019-7-25-yearning-rc-v0-1-0)
+
+## 2022-05-27 Yearning 3.0.0-RC13
++ 修复高并发下SQL回滚panic的问题
++ 修复迁移工具导致用户权限组为空时用户权限异常的问题
++ 修复秘钥不正确导致的报错问题
++ 修复审核及工单检测时编辑器可以选中语句测试的问题
++ 审核页面添加刷新按钮
++ 修复工单提交form校验错误的问题
++ 优化card-header 样式
 
 ## 2022-05-20 Yearning 3.0.0-RC12
 + 修复启动参数命令提示错误的问题 ( —config 提示为-config)
