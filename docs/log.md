@@ -1,5 +1,5 @@
 ## 更新目录
-- [Yearning 3.0.0-RC12](/log.md#_2022-05-27-yearning-3-0-0-rc13)
+- [Yearning 3.0.0-RC13](/log.md#_2022-05-27-yearning-3-0-0-rc13)
 - [Yearning 3.0.0-RC12](/log.md#_2022-05-20-yearning-3-0-0-rc12)
 - [Yearning 3.0.0-RC11](/log.md#_2022-05-11-yearning-3-0-0-rc11)
 - [Yearning 3.0.0-RC10](/log.md#_2022-05-09-yearning-3-0-0-rc10)
