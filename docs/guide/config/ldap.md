@@ -7,7 +7,7 @@
 **如开启ldaps请勾选启动ldaps复选框**
 
 ::: tip
-LDAP_Search filter 请根据实际情况填写，特别需要注意的是在Yearning中占位符使用%s进行表示，如上图所示。如果通过cn进行过滤则使用cn=%s。
+LDAP_Search filter 请根据实际情况填写，特别需要注意的是在Yearning中占位符使用%s进行表示，如上图所示。如果通过cn进行过滤则使用(&(cn=%s))。
 
 输入对应测试用户密码即可对LDAP鉴权进行测试。
 :::
