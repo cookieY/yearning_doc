@@ -6,7 +6,7 @@
 4. 进行调试
 
 ::: tip
-juno与Yearning 必须共用同一个数据库且共用同一份配置文件(如juno与Yearning不在同一台主机，则需拷贝一份cofnig.toml文件与juno放在同级目录。且Yearning项目内的config.toml文件中GrpcAddr配置项填写为juno所在主机的ip及端口)
+juno与Yearning 必须共用同一个数据库且共用同一份配置文件(如juno与Yearning不在同一台主机，则需拷贝一份cofnig.toml文件与juno放在同级目录。且Yearning项目内的config.toml文件中RpcAddr配置项填写为juno所在主机的ip及端口)
 
 由于当前juno仅只有linux版本,建议基于mac/windows平台开发的开发者使用docker启动juno。
 :::
