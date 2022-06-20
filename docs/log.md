@@ -1,4 +1,5 @@
 ## 更新目录
+- [Yearning 3.0.1](/log.md#_2022-06-20-yearning-3-0-1)
 - [Yearning 3.0.0-GA](/log.md#_2022-06-02-yearning-3-0-0-ga)
 - [Yearning 3.0.0-RC13](/log.md#_2022-05-27-yearning-3-0-0-rc13)
 - [Yearning 3.0.0-RC12](/log.md#_2022-05-20-yearning-3-0-0-rc12)
@@ -6,6 +7,17 @@
 - [Yearning 3.0.0-RC10](/log.md#_2022-05-09-yearning-3-0-0-rc10)
 - [Yearning 3.0.0-RC9](/log.md#_2022-05-07-yearning-3-0-0-rc9)
 - [Yearning 3.0.0-RC8](/log.md#_2022-05-06-yearning-3-0-0-rc8)
+
+
+## 2022-06-20 Yearning 3.0.1
++ 添加用户撤销工单功能
++ 添加切换查询数据源功能
++ 查询增加用户自行结束会话功能
++ 优化查询审核逻辑,开启查询审核的查询工单不可切换数据源
++ 修复数据源名称无法修改的问题
++ 优化数据源查询逻辑
++ 新增审核规则DDLAllowMultiAlter  DDL单个工单允许多alter语句提交
++ 修复流程编辑后新建流程将老流程替换的问题
 
 ## 2022-06-02 Yearning 3.0.0-GA
 
