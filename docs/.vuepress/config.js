@@ -29,6 +29,10 @@ module.exports = {
                         link: '/guide/install',
                   },
                   {
+                        text: '支持列表',
+                        link: '/support',
+                  },
+                  {
                         text: '常见问题',
                         link: '/feeback',
                   },

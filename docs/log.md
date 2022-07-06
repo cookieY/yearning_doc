@@ -1,4 +1,5 @@
 ## 更新目录
+- [Yearning 3.0.2](/log.md#_2022-07-06-yearning-3-0-2)
 - [Yearning 3.0.1](/log.md#_2022-06-20-yearning-3-0-1)
 - [Yearning 3.0.0-GA](/log.md#_2022-06-02-yearning-3-0-0-ga)
 - [Yearning 3.0.0-RC13](/log.md#_2022-05-27-yearning-3-0-0-rc13)
@@ -7,6 +8,18 @@
 - [Yearning 3.0.0-RC10](/log.md#_2022-05-09-yearning-3-0-0-rc10)
 - [Yearning 3.0.0-RC9](/log.md#_2022-05-07-yearning-3-0-0-rc9)
 - [Yearning 3.0.0-RC8](/log.md#_2022-05-06-yearning-3-0-0-rc8)
+
+## 2022-07-06 Yearning 3.0.2
++ 修复数据清除无法使用的问题
++ gorm版本升级为v2版本
++ 代码组织优化，开发环境升级为go1.18版本
++ 修复字段长度不足导致无法提交工单的问题 #603
++ 修复查询联想数据过大导致浏览器SessionStorage配额超限的问题 #602
++ 修复回滚语句为空时依然能够提交回滚语句的问题 #604
++ 支持DRDS2.0
++ 修复查询数据源切换后不同源相同数据库名无法展开的问题
++ 修复关键词检查异常的问题
++ 新增允许insert语句插入Null值 审核规则
 
 
 ## 2022-06-20 Yearning 3.0.1
