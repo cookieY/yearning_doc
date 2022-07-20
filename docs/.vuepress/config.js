@@ -132,6 +132,10 @@ module.exports = {
                                                       link: '/guide/get/query_audit',
                                                 },
                                           ]
+                                    },
+                                    {
+                                          text: '审计',
+                                          link: '/guide/comptroller',
                                     }
                               ]
                         }
