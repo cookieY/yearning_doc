@@ -117,6 +117,10 @@ module.exports = {
                                                       text: '审核/执行',
                                                       link: '/guide/get/audit',
                                                 },
+                                                {
+                                                      text: 'AutoTask',
+                                                      link: '/guide/get/autotask',
+                                                },
                                           ]
                                     },
                                     {
