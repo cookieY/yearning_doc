@@ -1,0 +1,1 @@
+const e={key:"v-559a0f40",path:"/guide/get/autotask.html",title:"AutoTask",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1660212477e3,contributors:[{name:"HenryYee",email:"henry@yearning.io",commits:1}]},filePathRelative:"guide/get/autotask.md"};export{e as data};
