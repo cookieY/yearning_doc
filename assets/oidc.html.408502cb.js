@@ -1,0 +1,1 @@
+const e={key:"v-2c3432ff",path:"/guide/config/oidc.html",title:"OIDC\u767B\u5F55\u914D\u7F6E",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1660719709e3,contributors:[{name:"HenryYee",email:"henry@yearning.io",commits:1}]},filePathRelative:"guide/config/oidc.md"};export{e as data};

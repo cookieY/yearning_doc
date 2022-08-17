@@ -1,0 +1,1 @@
+const e={key:"v-722b25bc",path:"/guide/config/rule.html",title:"PT-OSC/GH-OST",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1660719709e3,contributors:[{name:"HenryYee",email:"henry@yearning.io",commits:2}]},filePathRelative:"guide/config/rule.md"};export{e as data};
