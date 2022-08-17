@@ -92,11 +92,15 @@ module.exports = {
                                           link: '/guide/config/flow'
                                     },
                                     {
+                                          text: 'OIDC',
+                                          link: '/guide/config/oidc'
+                                    },
+                                    {
                                           text: 'LDAP配置',
                                           link: '/guide/config/ldap',
                                     },
                                     {
-                                          text: '审核规则',
+                                          text: 'PT-OSC/GH-OST',
                                           link: '/guide/config/rule',
                                     }
                               ]

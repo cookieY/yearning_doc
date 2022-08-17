@@ -15,7 +15,7 @@ Yearning采用自动表结构同步 无需手动更新表结构。只需**停止
 
 1.备份原Yearning数据库
 
-2.执行Yearning目录下 **migrate** 二进制文件。请注意 必须在**Yearning**启动之前执行！！
+2.执行Yearning目录下 **./migrate** 二进制文件。请注意 必须在**Yearning**启动之前执行！！
 
 3.正常启动Yearning
 :::
@@ -23,5 +23,4 @@ Yearning采用自动表结构同步 无需手动更新表结构。只需**停止
 ::: danger
 由于在一些新版本中会增加一些新的变更，请在更新后关闭Yearning页面重新登录后进行使用。
 由于流程,排除数据库,脱敏逻辑更改为基于数据源，请在更新后在数据源处修改配置。
-由于流程逻辑变更,升级后原始工单将无法查看, 如需查看请自行对工单行中的source_id字段进行填充(根据core_sql_orders表内的source字段查找core_data_sources表内的source关联并将source_id的值回填至对应的工单行内)
 :::

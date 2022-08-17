@@ -1,6 +1,4 @@
-# 审核规则
-
-审核规则请通过 管理 -> 审核规则 处进行修改
+# PT-OSC/GH-OST
 
 ::: warning
 关于OSCExpr审核规则的注意事项：
@@ -16,14 +14,16 @@
 通过增加通用变量的方式来尽可能的满足所有场景下的DDL迁移工具需求。
 
 增加通用变量如下：
+```shell
 
-1.  $SQL   
-2.  $ADDR 
-3.  $PORT 
-4.  $USER 
-5.  $PASSWORD 
-6.  $SCHEMA 
-7.  $TABLE
+1.  $SQL   对应执行工单SQL语句  
+2.  $ADDR   对应执行工单数据源地址
+3.  $PORT  对应执行工单数据源端口
+4.  $USER    对应执行工单数据源用户
+5.  $PASSWORD   对应执行工单数据源密码
+6.  $SCHEMA   对应执行工单库名  
+7.  $TABLE  对应执行工单表名
+````
 
 变更后如需在DDL语句中调用pt-osc指令则可以使用如下写法填写:
 
@@ -31,7 +31,9 @@
 pt-online-schema-change --alter $SQL --user=$USER --password=$PASSWORD --host=$ADDR P=$PORT,D=$SCHEMA,t=$TABLE --execute
 ```
 
-系统将自动把对应工单的相关数据填充到所关联的变量中。
+系统将自动把对应工单的相关数据填充到所关联的变量中，无需用户手动操作。
 
 如需使用其他迁移工具，只需要将相关通用变量填入对应的指令中即可(如 gh-ost)。
+
+**执行结果请在执行工单的工单详情处点击osc进度tab页进行查看**
 

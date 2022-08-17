@@ -13,7 +13,7 @@ Yearning安装包内已含有Dockerfile文件,可直接进行build打包成镜�
 如下所示
 
 ```shell
-docker run -d -it -p8000:8000 -e MYSQL_USER=root -e MYSQL_ADDR=10.0.0.3:3306 -e MYSQL_PASSWORD=123123 -e MYSQL_DB=Yearning chaiyd/yearning
+docker run -d -it -p8000:8000 -e SECRET_KEY=dbcjqheupqjsuwsm -e MYSQL_USER=root -e MYSQL_ADDR=10.0.0.3:3306 -e MYSQL_PASSWORD=123123 -e MYSQL_DB=Yearning chaiyd/yearning
 ```
 
 ## K8s
