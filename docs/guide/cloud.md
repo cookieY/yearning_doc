@@ -6,15 +6,17 @@
 
 Yearning安装包内已含有Dockerfile文件,可直接进行build打包成镜像
 
-**Yearning 从v2.0.4版本开始支持环境变量传参**
+容器启动时可通过环境变量的方式传入数据库地址以及秘钥。
 
-容器启动时可通过环境变量的方式传入数据库地址。
+单独使用docker时请先创建数据库并设置字符集为**utf8mb4**
 
 如下所示
 
 ```shell
 docker run -d -it -p8000:8000 -e SECRET_KEY=dbcjqheupqjsuwsm -e MYSQL_USER=root -e MYSQL_ADDR=10.0.0.3:3306 -e MYSQL_PASSWORD=123123 -e MYSQL_DB=Yearning chaiyd/yearning
 ```
+## Docker-compose(推荐安装)
+安装包/源码仓库内docker目录下执行 ``docker-compose up -d`` 即可
 
 ## K8s
 

@@ -1,5 +1,6 @@
 ## 更新目录
-- [Yearning 3.0.7](/log.md#_2022-07-19-yearning-3-0-7)
+- [Yearning 3.0.8](/log.md#_2022-08-23-yearning-3-0-8)
+- [Yearning 3.0.7](/log.md#_2022-08-18-yearning-3-0-7)
 - [Yearning 3.0.6](/log.md#_2022-08-11-yearning-3-0-6)
 - [Yearning 3.0.5](/log.md#_2022-08-06-yearning-3-0-5)
 - [Yearning 3.0.4](/log.md#_2022-07-23-yearning-3-0-4)
@@ -12,6 +13,14 @@
 - [Yearning 3.0.0-RC10](/log.md#_2022-05-09-yearning-3-0-0-rc10)
 - [Yearning 3.0.0-RC9](/log.md#_2022-05-07-yearning-3-0-0-rc9)
 - [Yearning 3.0.0-RC8](/log.md#_2022-05-06-yearning-3-0-0-rc8)
+
+
+
+## 2022-08-18 Yearning 3.0.8
++ 添加i18n 英语支持(目前仅对前端内容)
++ 修复推送消息没有工单说明及标题错误的问题(针对>= 3.0.5版本)
++ 修复查询时库名中带有特殊符号导致无法切库的问题 #661
++ 优化迁移脚本体验(针对2.3.5版本迁移至3.x版本)
 
 ## 2022-08-18 Yearning 3.0.7
 + 修复测试消息推送不发送的问题 

@@ -18,7 +18,7 @@ Yearning 目前兼容99%的Mysql 标准SQL语法。
 
 Yearning采用Explain分析SQL语句的影响行数。由于Explain生成的影响行数受主键，索引等其他因素的影响,并不能100%保证其准确性。其更多的是反应了该语句导致的全表扫描行数,所以对于误差较大的语句具有一定的优化参考意义。
 ### 回滚语句
-Yearning 采用解析binlog方式的方式获得回滚语句。由于Mysql replication协议限制,必须拥有SUPER/REPLICATION SLAVE, REPLICATION CLIENT ,ALL PRIVILEGES 权限的账号才可以获得binlog流。所以，如想体验生成回滚语句备份功能，请确保对应填写的数据源账号拥有相应权限，同时对应数据源应开启binlog功能。
+Yearning 采用解析binlog方式获得回滚语句。由于Mysql replication协议限制,必须拥有SUPER/REPLICATION SLAVE, REPLICATION CLIENT ,ALL PRIVILEGES 权限的账号才可以获得binlog流。所以，如想体验生成回滚语句备份功能，请确保对应填写的数据源账号拥有相应权限，同时对应数据源应开启binlog功能。
 # 常见问题
 
   为什么只有AWS/Aliyun的环境名？
