@@ -182,6 +182,30 @@ module.exports = {
                               link: '/dev/api'
                         },
                   ],
+                  '/sponsor': [
+                        {
+                              text: "赞助",
+                              link: "/sponsor"
+                        },
+                        {
+                              text: "额外功能",
+                              link: "/sponsor/extra"
+                        },
+                        {
+                              text: "功能展示",
+                              link: "/sponsor/feature",
+                              children: [
+                                    {
+                                          text: "移动端审核",
+                                          link: "/sponsor/feature/mobile",
+                                    },
+                                    {
+                                          text: "客户端查询",
+                                          link: "/sponsor/feature/client",
+                                    }
+                              ]
+                        }
+                  ]
             },
             logo: '/images/icon.png',
             repo: 'https://github.com/cookieY/Yearning',
