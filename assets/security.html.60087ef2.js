@@ -1,0 +1,1 @@
+const e={key:"v-27b6bb40",path:"/security.html",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"\u5B89\u5168",slug:"\u5B89\u5168",children:[]}],git:{updatedTime:1661840877e3,contributors:[{name:"HenryYee",email:"henry@yearning.io",commits:1}]},filePathRelative:"security.md"};export{e as data};
