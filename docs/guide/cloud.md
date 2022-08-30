@@ -20,7 +20,7 @@ docker run -d -it -p8000:8000 -e SECRET_KEY=dbcjqheupqjsuwsm -e MYSQL_USER=root 
 
 ## K8s
 
-k8s部署参考[K8S | 部署 Yearning SQL 审核平台](https://zhuanlan.zhihu.com/p/408504679)
+k8s部署[来自知乎](https://zhuanlan.zhihu.com/p/408504679) 以下为适配3.0版本的部署方式。
 
 #### Secret
 ``` yml
@@ -30,11 +30,12 @@ metadata:
   name: db-conf
   namespace: yearning
 type: Opaque  # 使用的是generic类型
-data:   # 这里配置的是数据库的相关信息，使用base64加密输入：
+data:   # 这里配置的是数据库的相关信息，使用base64加密输入： # echo -n 'xxxx' | base64
   addr: cm9vdAweqw==
   user: cm9vdAweqw==
   pass: cm9vdAweqw==
-  data: WWVhcm5pbmc=    # echo -n 'Yearning' | base64
+  data: WWVhcm5pbmc=    
+  sk: W3213123Vhcm5pbmc=
 ```
 
 #### Service
@@ -61,12 +62,11 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: yearing
-  namespace: zheng
+  name: yearning
+  namespace: yearning
 spec:
   rules:
-    # 需要在本地机器的hosts文件中添加配置：192.168.111.111 www.yearning.com
-    - host: www.yearning.com
+    - host: yearning.io
       http:
         paths:
           - path: /
@@ -84,7 +84,7 @@ apiVersion: apps/v1 # API版泵
 kind: Deployment  # 资源类型
 metadata: # 元数据
   labels: # 标签
-    app: SQL-Review
+    app: yearning
   name: yearning  # deployment的名字
   namespace: yearning  # 所属命名空间
 spec: 
@@ -98,7 +98,7 @@ spec:
         app: yearning
     spec:
       containers: # 容器信息
-        - image: 192.168.189.111/project/yearning  # 容器镜像
+        - image: chaiyd/yearning  # 容器镜像
           name: yearning # 容器的名字
           imagePullPolicy: IfNotPresent # 镜像的下载策略
           env:  # 容器中的变量
@@ -122,6 +122,11 @@ spec:
                 secretKeyRef:
                   name: db-conf
                   key: data
+            - name: SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: db-conf
+                  key: sk
           ports:    # 定义容器中的端口信息
             - containerPort: 8000
               name: web

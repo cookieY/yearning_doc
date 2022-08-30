@@ -45,6 +45,10 @@ module.exports = {
                         link: '/log',
                   },
                   {
+                        text: '安全',
+                        link: '/security',
+                  },
+                  {
                         text: '赞助',
                         link: '/sponsor',
                   },
