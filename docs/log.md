@@ -1,4 +1,6 @@
 ## 更新目录
+- [Yearning 3.1.0](/log.md#_2022-09-15-yearning-3-1-0)
+- [Yearning 3.0.9](/log.md#_2022-09-01-yearning-3-0-9)
 - [Yearning 3.0.8](/log.md#_2022-08-23-yearning-3-0-8)
 - [Yearning 3.0.7](/log.md#_2022-08-18-yearning-3-0-7)
 - [Yearning 3.0.6](/log.md#_2022-08-11-yearning-3-0-6)
@@ -14,7 +16,14 @@
 - [Yearning 3.0.0-RC9](/log.md#_2022-05-07-yearning-3-0-0-rc9)
 - [Yearning 3.0.0-RC8](/log.md#_2022-05-06-yearning-3-0-0-rc8)
 
+## 2022-09-15 Yearning 3.1.0
++ 修复SQL检测/执行完毕后连接不释放的问题
++ 修复审核人如果没有数据源权限无法审核的问题
 
+## 2022-09-01 Yearning 3.0.9
++ 优化大批量SQL导致审核列表卡死的问题
++ 优化白色主题布局
++ 修复SSL非465端口邮件无法发送的问题
 
 ## 2022-08-18 Yearning 3.0.8
 + 添加i18n 英语支持(目前仅对前端内容)

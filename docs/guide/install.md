@@ -74,16 +74,24 @@ SecretKey 是 token/数据库密码加密/解密的 salt。
 
 ## 3.启动服务
 
-> 默认启动
+> 
 
 ```shell
+默认启动
 ./Yearning run
+参数启动
+./Yearning run --push "172.27.80.35" -port "8000"
 ```
 
-> 参数启动
+::: warning
+请注意:
 
-```shell
-./Yearning run --push "172.27.80.35" -port "8000"
+由于Yearning中个别功能使用websocket进行通信。如采用反向代理的方式访问Yearning请在代理层对websocket协议进行代理支持。
+
+例如: nginx 需要配置 proxy_http_version 1.1; proxy_set_header Upgrade $http_upgrade; proxy_set_header Connection "upgrade";
+
+:::
+
 ```
 
 打开浏览器 http://127.0.0.1:8000
@@ -91,6 +99,8 @@ SecretKey 是 token/数据库密码加密/解密的 salt。
 默认账号/密码：**admin/Yearning_admin**
 
 ## 欢迎来到Yearning
+
+```
 
 ![](/images/dash01.png)
 
