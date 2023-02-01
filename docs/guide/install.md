@@ -96,9 +96,9 @@ SecretKey 是 token/数据库密码加密/解密的 salt。
 
 打开浏览器 http://127.0.0.1:8000
 
-默认账号/密码：**admin/Yearning_admin**
+默认账号/密码：admin/Yearning_admin
 
-## 欢迎来到Yearning
+欢迎来到Yearning
 
 ```
 
