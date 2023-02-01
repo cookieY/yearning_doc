@@ -16,7 +16,7 @@ LDAP_Search filter 请根据实际情况填写，特别需要注意的是在Year
 
 通过属性映射将LDAP中的属性信息与Yearning用户的数据信息，例如部门，邮箱，真实姓名进行关联。
 
-当前支持real_name(真实姓名),email(邮箱),department(部门) 3种字段的映射。 如对应ldap用户信息中 name字段对应真实姓名，dept字段对应部门，mail字段对应邮箱则映射格式如下(key为需要映射的用户字段,value为LDAP的对应属性的key值):
+当前支持real_name(真实姓名),email(邮箱),department(部门) 3种字段的映射。 例如：ldap用户信息中 name字段对应真实姓名，dept字段对应部门，mail字段对应邮箱则映射格式如下(key为需要映射的用户字段,value为LDAP的对应属性的key值):
 ```json
 
 { "real_name":"name","email":"mail","department":"dept" } 
