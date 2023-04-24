@@ -1,14 +1,17 @@
 # Juno 调用
 
 ## 如何使用
-2. 启动juno(可以通过-p 指定端口 默认端口为50001)
-3. 在conf.toml中将juno地址填写到GrpcAddr参数内(默认127.0.0.1:50001)
-4. 进行调试
+1. 使用docker部署juno
+   ```shell 
+   docker run -d -e MYSQL_USER=${YEARNING_DB_USER} -e MYSQL_PASSWORD=${YEARNING_DB_PASSWORD} -e MYSQL_ADDR=${YEARNING_DB_ADDR:PORT} -e MYSQL_DB=${YEARNING_DB}  -p 50001:50001 yeelabs/juno
+   ```
+2. 在conf.toml中将juno地址填写到GrpcAddr参数内(默认127.0.0.1:50001)
+3. 进行调试
 
 ::: tip
-juno与Yearning 必须共用同一个数据库且共用同一份配置文件(如juno与Yearning不在同一台主机，则需拷贝一份cofnig.toml文件与juno放在同级目录。且Yearning项目内的config.toml文件中RpcAddr配置项填写为juno所在主机的ip及端口)
+juno与Yearning 共用同一个数据库。Yearning项目内的config.toml文件中RpcAddr配置项填写为juno所在主机的ip(请勿使用本地回环地址连接)及端口
 
-由于当前juno仅只有linux版本,建议基于mac/windows平台开发的开发者使用docker启动juno。
+当前juno支持amd64/arm64。
 :::
 
 ### 调用方法
