@@ -1,0 +1,64 @@
+<template><div><p>Yearning does not rely on any third-party SQL auditing tools as its auditing engine, as it has its own internal auditing/rollback logic implemented.</p>
+<p><strong>It only relies on the MySQL database.</strong></p>
+<p>The MySQL version must be <strong>5.7</strong> or above (for versions 8.0 and above, set sql_mode to empty) and must be pre-installed with the <strong>Yearning database created</strong>. The character set should be <strong>UTF8mb4</strong> (only the MySQL version required by Yearning).</p>
+<p>Yearning is developed based on a 1080p resolution and <strong>only supports access from 1080p and above displays</strong>.</p>
+<p>For issues with overlapping configurations on the settings page, please ensure your resolution and check if magnification is enabled.</p>
+<p>Please use the latest version of Chrome (excluding other modified versions like 360).</p>
+<h1 id="yearning-download" tabindex="-1"><a class="header-anchor" href="#yearning-download"><span>Yearning Download</span></a></h1>
+<p>Yearning-go provides a binary download package.</p>
+<p>Download link: <a href="https://github.com/cookieY/Yearning/releases" target="_blank" rel="noopener noreferrer">https://github.com/cookieY/Yearning/releases</a></p>
+<p><strong>Please select the latest version and download the Yearning-x.x.x.linux-amd64.zip package from Assets.</strong></p>
+<p><strong>If you need to modify the code or compile it yourself, please visit the <a href="">second development page</a>.</strong></p>
+<h1 id="yearning-directory-structure" tabindex="-1"><a class="header-anchor" href="#yearning-directory-structure"><span>Yearning Directory Structure</span></a></h1>
+<p><img src="https://wuchen-1252812685.cos.ap-shanghai.myqcloud.com/img/yearning/20210301141132.png" alt=""></p>
+<h2 id="_1-fill-in-the-configuration-file" tabindex="-1"><a class="header-anchor" href="#_1-fill-in-the-configuration-file"><span>1. Fill in the Configuration File</span></a></h2>
+<div class="language-shell line-numbers-mode" data-ext="shell" data-title="shell"><button class="copy" title="Copy code" data-copied="Copied"></button><pre class="shiki shiki-themes vitesse-light vitesse-dark vp-code" v-pre=""><code><span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665">cat</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D"> conf.toml</span></span>
+<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666">[</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE">Mysql</span><span style="--shiki-light:#999999;--shiki-dark:#666666">]</span></span>
+<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665">Db</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D"> =</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D">Yearning</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77">"</span></span>
+<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665">Host</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D"> =</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D">127.0.0.1</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77">"</span></span>
+<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665">Port</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D"> =</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D">3306</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77">"</span></span>
+<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665">Password</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D"> =</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D">xxxx</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77">"</span></span>
+<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665">User</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D"> =</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D">root</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77">"</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#999999;--shiki-dark:#666666">[</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE">General</span><span style="--shiki-light:#999999;--shiki-dark:#666666">]</span><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD">   # Database encryption/decryption key, can only be changed once.</span></span>
+<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665">SecretKey</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D"> =</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D">dbcjqheupqjsuwsm</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77">"</span></span>
+<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665">LogLevel</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D"> =</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D">debug</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD">  # debug, info, warn, error - choose log display level</span></span>
+<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665">Lang</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D"> =</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D">en_US</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD">  # en_US, zh_CN - choose the language for Yearning</span></span></code></pre>
+
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="about-secretkey" tabindex="-1"><a class="header-anchor" href="#about-secretkey"><span>About SecretKey</span></a></h3>
+<p>SecretKey is the salt for token/database password encryption/decryption.</p>
+<p>It is recommended that all users change the SecretKey before initially installing Yearning (not changing it poses a security risk).</p>
+<p><strong>Format: Both uppercase and lowercase letters are allowed, and the length must be 16 characters. If the length is not 16 characters, it will lead to the inability to create new data sources.</strong></p>
+<p><strong>Special Attention:</strong></p>
+<p><strong>This key can only be changed during the initial installation! It cannot be changed afterwards! Changing it again will result in the stored data source passwords being undecryptable, ultimately leading to the inability to obtain related data source information.</strong></p>
+<h2 id="usage-help" tabindex="-1"><a class="header-anchor" href="#usage-help"><span>Usage Help</span></a></h2>
+<div class="language-shell line-numbers-mode" data-ext="shell" data-title="shell"><button class="copy" title="Copy code" data-copied="Copied"></button><pre class="shiki shiki-themes vitesse-light vitesse-dark vp-code" v-pre=""><code><span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665">./Yearning</span><span style="--shiki-light:#A65E2B;--shiki-dark:#C99076"> --help</span></span></code></pre>
+
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p><img src="https://wuchen-1252812685.cos.ap-shanghai.myqcloud.com/img/yearning/20210301141137.jpg" alt=""></p>
+<h2 id="_2-initialization-and-installation" tabindex="-1"><a class="header-anchor" href="#_2-initialization-and-installation"><span>2. Initialization and Installation</span></a></h2>
+<div class="language-shell line-numbers-mode" data-ext="shell" data-title="shell"><button class="copy" title="Copy code" data-copied="Copied"></button><pre class="shiki shiki-themes vitesse-light vitesse-dark vp-code" v-pre=""><code><span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665">./Yearning</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D"> install</span></span></code></pre>
+
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p><strong>If you need to reinstall, please delete all tables under the yearning database first; otherwise, repeated execution will be ineffective.</strong></p>
+<h2 id="_3-start-the-service" tabindex="-1"><a class="header-anchor" href="#_3-start-the-service"><span>3. Start the Service</span></a></h2>
+<div class="language-shell line-numbers-mode" data-ext="shell" data-title="shell"><button class="copy" title="Copy code" data-copied="Copied"></button><pre class="shiki shiki-themes vitesse-light vitesse-dark vp-code" v-pre=""><code><span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665">Default</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D"> start</span></span>
+<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665">./Yearning</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D"> run</span></span>
+<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665">Start</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D"> with</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D"> parameters</span></span>
+<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665">./Yearning</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D"> run</span><span style="--shiki-light:#A65E2B;--shiki-dark:#C99076"> --push</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D">172.27.80.35</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="--shiki-light:#A65E2B;--shiki-dark:#C99076"> --port</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D">8000</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77">"</span></span></code></pre>
+
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container warning">
+<p class="hint-container-title">Warning</p>
+<p>Please Note:</p>
+<p>Some features in Yearning use websocket for communication. If accessing Yearning via reverse proxy, please ensure websocket protocol support at the proxy layer.</p>
+<p>For example, in nginx, you need to configure proxy_http_version 1.1; proxy_set_header Upgrade $http_upgrade; proxy_set_header Connection &quot;upgrade&quot;;</p>
+</div>
+<div class="language- line-numbers-mode" data-ext="" data-title=""><button class="copy" title="Copy code" data-copied="Copied"></button><pre class="shiki shiki-themes vitesse-light vitesse-dark vp-code" v-pre=""><code><span class="line"><span></span></span>
+<span class="line"><span>Open your browser and go to http://127.0.0.1:8000</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Default username/password: admin/Yearning_admin</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Welcome to Yearning</span></span></code></pre>
+
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="/images/dash01.png" alt=""></p>
+</div></template>
+
+

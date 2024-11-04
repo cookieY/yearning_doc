@@ -1,0 +1,31 @@
+<template><div><div class="hint-container warning">
+<p class="hint-container-title">注意</p>
+<p>关于OSCExpr审核规则的注意事项：</p>
+<p>在3.0.0版本之前的Yearning版本中，通过强制pt-osc的参数名来统一pt-osc执行指令。这给用户带来了不小的麻烦:</p>
+<ol>
+<li>无法扩展参数</li>
+<li>无法正确了解Yearning中的参数与pt-osc的关联性</li>
+<li>无法使用除pt-osc的其他迁移工具</li>
+</ol>
+</div>
+<p>基于以上原因，在Yearning3.0.0中增加了OSCExpr参数，并废除了pt-osc相关的参数规则。</p>
+<p>通过增加通用变量的方式来尽可能的满足所有场景下的DDL迁移工具需求。</p>
+<p>增加通用变量如下：</p>
+<div class="language-shell line-numbers-mode" data-ext="shell" data-title="shell"><button class="copy" title="复制代码" data-copied="已复制"></button><pre class="shiki shiki-themes vitesse-light vitesse-dark vp-code" v-pre=""><code><span class="line"></span>
+<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665">1.</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A">  $SQL</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D">   对应执行工单SQL语句</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE">  </span></span>
+<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665">2.</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A">  $ADDR</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D">   对应执行工单数据源地址</span></span>
+<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665">3.</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A">  $PORT</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D">  对应执行工单数据源端口</span></span>
+<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665">4.</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A">  $USER</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D">    对应执行工单数据源用户</span></span>
+<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665">5.</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A">  $PASSWORD</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D">   对应执行工单数据源密码</span></span>
+<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665">6.</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A">  $SCHEMA</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D">   对应执行工单库名</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE">  </span></span>
+<span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665">7.</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A">  $TABLE</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D">  对应执行工单表名</span></span></code></pre>
+
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>变更后如需在DDL语句中调用pt-osc指令则可以使用如下写法填写:</p>
+<div class="language-shell line-numbers-mode" data-ext="shell" data-title="shell"><button class="copy" title="复制代码" data-copied="已复制"></button><pre class="shiki shiki-themes vitesse-light vitesse-dark vp-code" v-pre=""><code><span class="line"><span style="--shiki-light:#59873A;--shiki-dark:#80A665">pt-online-schema-change</span><span style="--shiki-light:#A65E2B;--shiki-dark:#C99076"> --alter</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A"> $SQL</span><span style="--shiki-light:#A65E2B;--shiki-dark:#C99076"> --user=</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D">$USER</span><span style="--shiki-light:#A65E2B;--shiki-dark:#C99076"> --password=</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D">$PASSWORD</span><span style="--shiki-light:#A65E2B;--shiki-dark:#C99076"> --host=</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D">$ADDR</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D"> P=</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A">$PORT</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D">,D=</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A">$SCHEMA</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D">,t=</span><span style="--shiki-light:#B07D48;--shiki-dark:#BD976A">$TABLE</span><span style="--shiki-light:#A65E2B;--shiki-dark:#C99076"> --execute</span></span></code></pre>
+
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>系统将自动把对应工单的相关数据填充到所关联的变量中，无需用户手动操作。</p>
+<p>如需使用其他迁移工具，只需要将相关通用变量填入对应的指令中即可(如 gh-ost)。</p>
+<p><strong>执行结果请在执行工单的工单详情处点击osc进度tab页进行查看</strong></p>
+</div></template>
+
+
