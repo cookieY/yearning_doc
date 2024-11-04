@@ -1,67 +1,67 @@
-<template><div><p><strong>在正式使用Yearning前,你需要先设置如下setup(请务必花几分钟时间阅读!)。</strong></p>
+<template><div><p><strong>Before officially using Yearning, please set up the following (take a few minutes to read this!).</strong></p>
 <ol>
-<li>创建用户</li>
-<li>创建权限组并将权限组赋予给对应的用户</li>
-<li>创建审批流程</li>
-<li>添加数据源信息</li>
-<li>对数据源赋予审批流程</li>
-<li>在设置页面配置各项配置信息</li>
-<li>根据需求调整自定义审核规则</li>
+<li>Create Users</li>
+<li>Create Permission Groups and Assign Them to Corresponding Users</li>
+<li>Create Approval Processes</li>
+<li>Add Data Source Information</li>
+<li>Assign Approval Processes to Data Sources</li>
+<li>Configure Settings in the Settings Page</li>
+<li>Adjust Custom Audit Rules as Needed</li>
 </ol>
-<h3 id="创建用户" tabindex="-1"><a class="header-anchor" href="#创建用户"><span>创建用户</span></a></h3>
-<p>在Yearning中用户可以通过以下方式创建:</p>
+<h3 id="create-users" tabindex="-1"><a class="header-anchor" href="#create-users"><span>Create Users</span></a></h3>
+<p>Users in Yearning can be created in the following ways:</p>
 <ol>
-<li>在 <strong>管理-&gt;用户</strong> 页面admin用户自行创建用户。</li>
-<li>打开 <strong>管理-&gt;设置</strong> 页面中的允许注册配置并保存。 由注册人自行点击yearning登录页面左上角注册按钮进行注册。</li>
-<li>配置 <strong>管理-&gt;设置</strong> 页面中的Ldap的信息并保存。 ldap用户可在yearning登录页面中勾选ldap登录进行用户注册/登录操作。</li>
-<li>基于config.toml配置的OIDC登陆方式进行用户登录操作。</li>
+<li>Admin users can manually create users through the <strong>Management-&gt;Users</strong> page.</li>
+<li>Enable and save the registration option in the <strong>Management-&gt;Settings</strong> page. The user can then register by clicking the register button on the top left corner of the Yearning login page.</li>
+<li>Configure and save the Ldap information in the <strong>Management-&gt;Settings</strong> page. Ldap users can select Ldap login on the Yearning login page to register/login.</li>
+<li>User login can also be performed via OIDC login configured through <code v-pre>config.toml</code>.</li>
 </ol>
 <div class="hint-container tip">
 <p class="hint-container-title">Tips</p>
-<p>ldap配置中对于filter中的%s为占位符，类似于其他ldap系统中的%(user)s</p>
+<p>In Ldap configuration, the <code v-pre>%s</code> in the filter is a placeholder, similar to <code v-pre>%(user)s</code> in other Ldap systems.</p>
 </div>
-<h3 id="创建权限组并将权限组赋予给对应的用户" tabindex="-1"><a class="header-anchor" href="#创建权限组并将权限组赋予给对应的用户"><span>创建权限组并将权限组赋予给对应的用户</span></a></h3>
-<p>通过<strong>管理-&gt;权限组</strong> 页面，admin可以创建/编辑/删除权限组。权限组提供了多种细粒度的权限管控(yearning目前权限管控仅下沉到数据源级别)如下所示:</p>
+<h3 id="create-permission-groups-and-assign-them-to-corresponding-users" tabindex="-1"><a class="header-anchor" href="#create-permission-groups-and-assign-them-to-corresponding-users"><span>Create Permission Groups and Assign Them to Corresponding Users</span></a></h3>
+<p>Admin can create/edit/delete permission groups through the <strong>Management-&gt;Permission Groups</strong> page. Permission groups offer various fine-grained permissions control (currently at data source level only), as shown below:</p>
 <ol>
-<li>允许DDL工单提交的数据源范围</li>
-<li>允许DML工单提交的数据源范围</li>
-<li>允许查询工单提交的数据源范围</li>
+<li>Range of data sources allowed for DDL submission</li>
+<li>Range of data sources allowed for DML submission</li>
+<li>Range of data sources allowed for query submission</li>
 </ol>
-<p>创建完权限组后请通过<strong>管理-&gt;用户</strong>页面，选择你需要赋予权限组的用户点击该用户对应的权限按钮进行权限组赋权。</p>
-<p>权限组设计理念可访问<a href="/guide/authority">权限设计</a></p>
+<p>After creating the permission group, please go to the <strong>Management-&gt;Users</strong> page, select the user to whom you need to grant the permission group, and click the permission button corresponding to that user for authorization.</p>
+<p>To understand the philosophy behind permission groups, visit <a href="/guide/authority">Permission Design</a>.</p>
 <div class="hint-container tip">
 <p class="hint-container-title">Tips</p>
-<p>一个用户可以被赋予多个权限组,多权限组下该用户会集成2个权限组的全部权限</p>
-<p>一个权限组也可以对多个用户进行赋权</p>
+<p>A user can be assigned multiple permission groups. In such a case, the user will inherit all permissions from both groups.</p>
+<p>A single permission group can be assigned to multiple users.</p>
 </div>
-<h3 id="添加数据源信息" tabindex="-1"><a class="header-anchor" href="#添加数据源信息"><span>添加数据源信息</span></a></h3>
-<p>通过<strong>管理-&gt;数据库</strong> 页面，admin可以创建/编辑/删除数据源。数据源为一个Mysql实例，数据库共分为读/写/读写三大种类。如果希望该数据源既可处理DDL/DML工单又能进行查询则该数据源应设置为读写，反之根据自己的需求可以设置为读/写。</p>
+<h3 id="add-data-source-information" tabindex="-1"><a class="header-anchor" href="#add-data-source-information"><span>Add Data Source Information</span></a></h3>
+<p>Admin can create/edit/delete data sources through the <strong>Management-&gt;Databases</strong> page. A data source is a MySQL instance, categorized into three types: read, write, and read-write. If you wish the data source to handle both DDL/DML submissions and queries, it should be set to read-write; otherwise, set it according to your needs.</p>
 <div class="hint-container warning">
 <p class="hint-container-title">Warning</p>
-<p>Yearning不支持一些特殊字符串例如@，这是由于转义以及可能会带来的pt-osc执行错误而不得不规避的问题，建议用户单独创建一个新的mysql用户用来对接Yearning平台</p>
+<p>Yearning does not support certain special characters like <code v-pre>@</code>, due to potential issues with escaping and pt-osc execution errors. It is recommended to create a new MySQL user specifically for integration with the Yearning platform.</p>
 </div>
-<h3 id="为环境创建自定义审核规则" tabindex="-1"><a class="header-anchor" href="#为环境创建自定义审核规则"><span>为环境创建自定义审核规则</span></a></h3>
-<p>通过<strong>管理-&gt;流程</strong> 页面，admin可以编辑环境的流程。</p>
-<p>Yearning以环境为单元，可对不同的环境配置不同的审核流程。</p>
+<h3 id="create-custom-audit-rules-for-environments" tabindex="-1"><a class="header-anchor" href="#create-custom-audit-rules-for-environments"><span>Create Custom Audit Rules for Environments</span></a></h3>
+<p>Admin can edit the process of an environment through the <strong>Management-&gt;Processes</strong> page.</p>
+<p>Yearning uses environments as units, allowing different audit processes for different environments.</p>
 <div class="hint-container warning">
 <p class="hint-container-title">Warning</p>
-<p>更改流程时请确保该环境下的工单都已处理完毕，否则可能会引起流程错乱！</p>
-<p>如没有将对应环境配置流程则用户无法对这个环境进行任何DDL/DML工单提交操作</p>
+<p>Ensure all orders in the environment are processed before changing the process to avoid confusion.</p>
+<p>If there is no process configuration for the environment, users cannot submit any DDL/DML orders for that environment.</p>
 </div>
-<h3 id="在设置页面配置各项配置信息" tabindex="-1"><a class="header-anchor" href="#在设置页面配置各项配置信息"><span>在设置页面配置各项配置信息</span></a></h3>
-<p>通过<strong>管理-&gt;设置</strong> 页面，admin可以配置Yearning的多项配置。</p>
-<p>这里将介绍几个重点配置:</p>
+<h3 id="configure-settings-in-the-settings-page" tabindex="-1"><a class="header-anchor" href="#configure-settings-in-the-settings-page"><span>Configure Settings in the Settings Page</span></a></h3>
+<p>Admin can configure various settings of Yearning through the <strong>Management-&gt;Settings</strong> page.</p>
+<p>Here are some key configurations:</p>
 <ol>
-<li>查询limit上限: 该设置为 <strong>全局查询</strong> 最大的limit限制，默认为1000.这意味着通过Yearning进行的查询最多只会查询1000条，如需提高此阀值可直接修改这个配置。(DML/DDL的影响行数上限不受此规则限制，如需对DML/DDL影响行数上限进行修改请前往审核规则页面进行配置)</li>
-<li>添加环境: 默认Yearning仅提供<strong>aws/aliyun</strong>两个环境，用户可自行添加或删除环境，添加完对应的环境后请及时前往流程模板页面添加该新环境的流程模板。</li>
+<li>Query Limit: This is the maximum limit for <strong>global queries</strong>, defaulting to 1000. This means queries through Yearning can return a maximum of 1000 rows. To increase this limit, modify this setting directly. (The limit for DML/DDL affected rows is not bound by this rule; modify this in the audit rules page.)</li>
+<li>Add Environment: By default, Yearning only provides <strong>aws/aliyun</strong> environments. Users can add or remove environments as needed. After adding an environment, promptly go to the process template page to add a template for that environment.</li>
 </ol>
-<h3 id="根据需求调整自定义审核规则" tabindex="-1"><a class="header-anchor" href="#根据需求调整自定义审核规则"><span>根据需求调整自定义审核规则</span></a></h3>
-<p>通过<strong>管理-&gt;审核规则</strong> 页面，admin可以设置Yearning多达几十项的审核规则且每一项审核规则都有详细的描述。</p>
+<h3 id="adjust-custom-audit-rules-as-needed" tabindex="-1"><a class="header-anchor" href="#adjust-custom-audit-rules-as-needed"><span>Adjust Custom Audit Rules as Needed</span></a></h3>
+<p>Admin can configure numerous audit rules, each with detailed descriptions, through the <strong>Management-&gt;Audit Rules</strong> page.</p>
 <div class="hint-container tip">
 <p class="hint-container-title">Tips</p>
-<p>审核规则中OSC Expr 设置项可对DDL语句使用pt-osc/gh-ost表迁移工具</p>
-<p>对于PT-OSC的设置请参考<a href="https://www.percona.com/doc/percona-toolkit/3.0/pt-online-schema-change.html" target="_blank" rel="noopener noreferrer">官方文档</a></p>
-<p>对于GH-OST的设置请参考<a href="https://github.com/github/gh-ost" target="_blank" rel="noopener noreferrer">官方文档</a></p>
+<p>In the Audit Rules, OSC Expr settings can utilize pt-osc/gh-ost for table migrations with DDL statements.</p>
+<p>For PT-OSC settings, refer to the <a href="https://www.percona.com/doc/percona-toolkit/3.0/pt-online-schema-change.html" target="_blank" rel="noopener noreferrer">official documentation</a>.</p>
+<p>For GH-OST settings, refer to the <a href="https://github.com/github/gh-ost" target="_blank" rel="noopener noreferrer">official documentation</a>.</p>
 </div>
 </div></template>
 

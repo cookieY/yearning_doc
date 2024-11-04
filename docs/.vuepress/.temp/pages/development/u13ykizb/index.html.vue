@@ -1,26 +1,25 @@
-<template><div><p>Yearning 遵循AGPL协议。(不含审核引擎项目Juno)</p>
-<p>该协议具体约束及权利如下:</p>
-<h3 id="被授权人权利" tabindex="-1"><a class="header-anchor" href="#被授权人权利"><span>被授权人权利</span></a></h3>
-<p>被授权人有权利使用、复制、修改、合并、散布</p>
-<h3 id="被授权人义务" tabindex="-1"><a class="header-anchor" href="#被授权人义务"><span>被授权人义务</span></a></h3>
+<template><div><p>Yearning is licensed under the AGPL license. (This does not include the Juno audit engine project)</p>
+<p>The specific constraints and rights under this license are as follows:</p>
+<h3 id="rights-of-the-licensee" tabindex="-1"><a class="header-anchor" href="#rights-of-the-licensee"><span>Rights of the Licensee</span></a></h3>
+<p>The licensee has the right to use, copy, modify, merge, and distribute the software.</p>
+<h3 id="obligations-of-the-licensee" tabindex="-1"><a class="header-anchor" href="#obligations-of-the-licensee"><span>Obligations of the Licensee</span></a></h3>
 <ul>
 <li>
-<p>未经原作者授权不得将Yearning 用于任何商业目的。包括通过网络提供任何基于Yearning的商业服务。</p>
+<p>Yearning may not be used for any commercial purposes without the author's permission. This includes providing any commercial services based on Yearning over the internet.</p>
 </li>
 <li>
-<p>如果你修改了代码，需要在被修改的文件中说明。</p>
+<p>If you modify the code, you must indicate it in the modified files.</p>
 </li>
 <li>
-<p>如二次开发并公布的情况下(内部使用不在该条款之内)，该软件必须为开源项目，不可为任何商业性质的商业软件。如需商业化必须获得原作者授权。</p>
+<p>If you engage in secondary development and plan to publish it (internal use is not covered by this clause), the software must remain an open-source project and cannot be of any commercial nature. For commercialization, authorization from the original author is required.</p>
 </li>
 <li>
-<p>本平台所有条款符合相应开源许可，请严格按照相关许可使用及开发。</p>
+<p>All terms of this platform comply with the corresponding open-source license. Please adhere strictly to the relevant license for use and development.</p>
 </li>
 </ul>
-<h2 id="注意事项" tabindex="-1"><a class="header-anchor" href="#注意事项"><span>注意事项</span></a></h2>
-<p>Yearning后端及前端代码基于AGPL3.0(审核引擎项目Juno代码不在开放范围,严禁商业使用)</p>
-<p><strong>开源版本已实现net/rpc调用，可执行可编译运行。</strong></p>
-<p><strong>不建议初学者尝试二次开发或当做学习项目</strong></p>
+<h2 id="important-notes" tabindex="-1"><a class="header-anchor" href="#important-notes"><span>Important Notes</span></a></h2>
+<p>The backend and frontend code of Yearning are based on AGPL 3.0 (the Juno audit engine project is not open and strictly prohibited for commercial use).</p>
+<p><strong>The open-source version includes net/rpc calls and can be executed and compiled.</strong></p>
 </div></template>
 
 

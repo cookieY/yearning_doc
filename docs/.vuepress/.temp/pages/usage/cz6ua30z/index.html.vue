@@ -1,19 +1,20 @@
-<template><div><h2 id="创建用户" tabindex="-1"><a class="header-anchor" href="#创建用户"><span>创建用户</span></a></h2>
-<p>创建用户有以下两种方式:</p>
+<template><div><h2 id="creating-users" tabindex="-1"><a class="header-anchor" href="#creating-users"><span>Creating Users</span></a></h2>
+<p>Users can be created in the following two ways:</p>
 <ul>
-<li>LDAP登录 当用户第一次通过LDAP登录并成功后Yearning将自动创建该用户数据。(在Yearning中LDAP用户的密码为随机密码，所以LDAP用户无法通过非LDAP登录的方式登录本系统)</li>
-<li>管理员在 管理 -&gt; 用户 页面中手动创建</li>
+<li>LDAP Login: When a user logs in through LDAP for the first time and succeeds, Yearning will automatically create user data for them. (In Yearning, the password for an LDAP user is randomly generated, so LDAP users cannot log in using non-LDAP methods.)</li>
+<li>Admin creates users manually on the Management -&gt; Users page.</li>
 </ul>
-<h2 id="编辑用户" tabindex="-1"><a class="header-anchor" href="#编辑用户"><span>编辑用户</span></a></h2>
-<p><img src="/images/user01.png" alt="">
-点击编辑按钮可编辑改用户行数据,如下所示:
-<img src="/images/user02.png" alt=""></p>
-<p>重点名词释义:</p>
-<p>1.审计人  当用户为审计人角色时，将可查看审计页面下相关信息。</p>
-<h2 id="用户赋权" tabindex="-1"><a class="header-anchor" href="#用户赋权"><span>用户赋权</span></a></h2>
-<p><img src="/images/user03.png" alt="">
-点击权限按钮即可对该用户进行赋权。可以同时将多个权限组赋予用户，用户的权限将根据所赋予的1个或多个权限组权限计算并去重后获得。
-权限组权限配置请参考<a href="/guide/config/group">权限组设置</a>。</p>
+<h2 id="editing-users" tabindex="-1"><a class="header-anchor" href="#editing-users"><span>Editing Users</span></a></h2>
+<p><img src="/images/user01.png" alt="Edit User"></p>
+<p>Clicking the edit button allows you to edit the user's row data, as shown below:</p>
+<p><img src="/images/user02.png" alt="Edit User Details"></p>
+<p>Key Terminology:</p>
+<ol>
+<li>Auditor: When a user has the auditor role, they will be able to view related information on the audit page.</li>
+</ol>
+<h2 id="assigning-permissions-to-users" tabindex="-1"><a class="header-anchor" href="#assigning-permissions-to-users"><span>Assigning Permissions to Users</span></a></h2>
+<p><img src="/images/user03.png" alt="Assign Permissions"></p>
+<p>Click the permissions button to assign permissions to the user. Multiple permission groups can be assigned to a user simultaneously, and the user's permissions will be calculated and deduplicated based on the one or more permission groups assigned. For permission group configuration, refer to <a href="/guide/config/group">Permission Group Settings</a>.</p>
 </div></template>
 
 

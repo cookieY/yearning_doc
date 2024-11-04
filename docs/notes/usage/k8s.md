@@ -1,10 +1,12 @@
 ---
-title: k8s
+title: Kubernetes
 createTime: 2024/11/04 15:47:05
 permalink: /usage/hf1nqbio/
 ---
 
-k8s部署[来自知乎](https://zhuanlan.zhihu.com/p/408504679) 以下为适配3.0版本的部署方式。
+Kubernetes Deployment (Adapted for Version 3.0) [Source: Zhihu](https://zhuanlan.zhihu.com/p/408504679)
+
+Below is the deployment method adapted for version 3.0.
 
 #### Secret
 ``` yml

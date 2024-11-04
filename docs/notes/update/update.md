@@ -1,253 +1,295 @@
 ---
-title: 更新日志
+title: Change Logs
 createTime: 2024/11/04 16:20:19
 permalink: /article/amegqavl/
 ---
-## 2023-04-24 Yearning 3.1.4
-+ 工单/查询工单列表不再采用轮训方式实时获取数据，改用ws
-+ 工单/查询详情采用卡片抽屉式进行展示
-+ 修复google浏览器执行查询语句语句时，如果查询结果的列过多，会导致整个浏览器被撑大的问题 #789
-+ 新增对ARMv64的支持
+### 2024-11-01 Yearning 3.1.9
+- Improved the stream message format for the AI assistant.
+- Fixed the issue where the list did not refresh when creating a data source.
+- Resolved the problem of precision loss with bigint data type (#1104).
+- Fixed the issue where executing SQL did not support SSL connections (#1120).
+- Added DMLWhereExprValueIsNull audit parameter: Checks if the where condition value in DML statements is null.
+- Introduced a new audit button (#1032).
 
-## 2023-03-09 Yearning 3.1.3
-+ 修复gh-ost无法执行的问题
-+ 修复工单列表刷新异常的问题
-+ 修复dml语句未备份执行时 执行信息无法展示的问题
+### 2024-07-27 Yearning 3.1.8
+- Implemented audit button debounce to fix abnormal data issues caused by multiple clicks.
+- Added smart assistant functionality.
+- Introduced SQL statement AI optimization and AI text-generated SQL functions.
+- Enabled viewing of table structures in the query menu (#1057).
+- Added MFA authentication (sponsored version).
+- Fixed the problem where datetime field type detection might occasionally display errors (#1039).
+- Resolved the issue where query audits could be submitted multiple times (#1024).
+- Fixed the abnormal display of default audit person restrictions (#991).
+- Updated dependencies and resolved security vulnerabilities.
+- Updated Docker file image to fix issues with changing language settings via environment variables.
 
-## 2023-02-10 Yearning 3.1.2.2
-+ 修复firefox浏览器头部样式遮挡问题 #637
-+ 修复insert语句审核异常的问题 #760 #759 #755
+### 2024-01-02 Yearning 3.1.7
+- Fixed the error that occurred when the process status was abnormal after a flow change, causing information to not display.
+- Added new search conditions for termination, cancellation, and pending execution in order search.
 
-## 2023-02-01 Yearning 3.1.2.1
-+ 修复查询审核工单提交后工单异常的问题
-+ 修复公告栏数据无法保存的问题
-+ 修复用户创建密码验证文案显示错误的问题
-+ 修复枚举类审核异常的问题
-+ 修复语法检测timestamp类型字段的默认值为字符串时依然通过
-+ 修复审核insert into 语句列数与值列表不匹配审核异常的问题
-+ 支持 drop table if exists语句
-+ 支持数据源SSL连接 
+### 2023-09-08 Yearning 3.1.6.3
+- Fix: Closed #901 by resolving the issue where querying a non-existent table name or executing a DML caused the query page to freeze.
+- Various optimizations.
 
-## 2022-11-14 Yearning 3.1.1.1
-+ 解决回滚语句升序导致的依赖语句执行错误问题(更改为降序)
-+ 调整提交防抖逻辑 规避重复提交问题 
-+ 修复工单时间查询失效的问题
-+ 修复表字符集更改回滚语句异常的问题
-+ 修复SQL语句为空时依然可以提交的问题 
-+ 对列表页使用前端缓存
-+ 修复枚举类审核异常的问题 
-+ 修复执行时间未展示的问题 
-+ 修复create table 回滚语句生成单独索引语句导致无法回滚的问题
-+ 修复安装初始化时admin赋权语句错误的问题
+### 2023-08-10 Yearning 3.1.6.2
+- Feature: Closed #832, allowing for custom audit rules on a per data source basis.
+- Feature: Multi-language support; specify front and back-end languages via config.toml, supporting Chinese/English.
+- Fix: Closed #848, resolving the issue where the loading indicator was not shown during query waits.
+- Optimization: Closed #840, improved daily order number display issues on the homepage.
+- Optimization: Closed #790, added data source column display on the order audit page.
+- Optimization: Closed #703, supported changing execution time/immediate execution/termination of scheduled tasks.
+- Optimization: Changed the order list sorting rule to be based on audit status and chronological order.
+- Optimization: Supported transaction mode execution for DML data; activate this option in the audit rules by searching for DMLTransaction.
+- Optimization: Closed #795, query keyword reminders (table names, field names) are restricted to the current database. When a database is selected, its table and field names are obtained.
+- Optimization: Query results now support copying cell content upon click.
+- Optimization: Specified domain address changes are now made through the settings page instead of via the -s flag; DingTalk card supports URL jumps.
+- Various other optimizations.
 
-## 2022-09-15 Yearning 3.1.0
-+ 修复SQL检测/执行完毕后连接不释放的问题
-+ 修复审核人如果没有数据源权限无法审核的问题
+### 2023-07-04 Yearning 3.1.5
+- Optimized layout on the audit detail page.
+- Improved layout of audit buttons #829 #825 #802.
+- Fixed exceptions in audit query time range condition formatting.
+- Resolved errors when adding datetime fields with default values of 0000-00-00 00:00:00 #823.
+- Corrected the issue where queries could still be audited after the person responsible had been changed.
 
-## 2022-09-01 Yearning 3.0.9
-+ 优化大批量SQL导致审核列表卡死的问题
-+ 优化白色主题布局
-+ 修复SSL非465端口邮件无法发送的问题
+### 2023-04-24 Yearning 3.1.4
+- Transitioned from polling to WebSocket for real-time data retrieval in orders/query lists.
+- Order/query details are displayed using a card drawer style.
+- Fixed the issue where executing query statements with too many columns in Google Chrome would cause the browser to enlarge excessively #789.
+- Added ARMv64 support.
 
-## 2022-08-18 Yearning 3.0.8
-+ 添加i18n 英语支持(目前仅对前端内容)
-+ 修复推送消息没有工单说明及标题错误的问题(针对>= 3.0.5版本)
-+ 修复查询时库名中带有特殊符号导致无法切库的问题 #661
-+ 优化迁移脚本体验(针对2.3.5版本迁移至3.x版本)
+### 2023-03-09 Yearning 3.1.3
+- Resolved issues with gh-ost execution.
+- Fixed order list refresh anomalies.
+- Addressed the problem where execution information could not be displayed when DML statements were executed without backup.
 
-## 2022-08-18 Yearning 3.0.7
-+ 修复测试消息推送不发送的问题 
-+ 修复工单时间字段查询控制台报错的问题 
-+ 修复工单重复提交异常的问题 
-+ 修复查询导出xls列顺序混乱的问题
-+ 优化查询显示结果
-+ 优化工单详情进度信息样式
-+ 优化容器部署支持秘钥自定义
-+ 优化OIDC登录逻辑
+### 2023-02-10 Yearning 3.1.2.2
+- Fixed the Firefox browser header style blocking issue #637.
+- Resolved insert statement audit anomalies #760 #759 #755.
 
-## 2022-08-11 Yearning 3.0.6
-+ 完善ws查询断线重连逻辑
-+ 修复查询结果tab页显示异常的问题
-+ 修复3.0.5版本消息推送格式异常的问题
-+ 修复某些查询写法导致字段脱敏逃逸的问题
+### 2023-02-01 Yearning 3.1.2.1
+- Corrected the order anomaly issue post-query audit order submission.
+- Resolved the problem where the bulletin board data could not be saved.
+- Fixed the display error in password creation validation documentation.
+- Addressed enumeration audit anomalies.
+- Rectified syntax detection issues when the default value of timestamp fields is a string.
+- Resolved audit anomalies in insert into statements where column and value list numbers do not match.
+- Added support for drop table if exists statements.
+- Supported SSL connection for data sources.
 
-## 2022-08-06 Yearning 3.0.5
-+ 修复DDL语句提交超过10条卡死的问题
-+ 修复enum类型检测时长度报错的问题
-+ 修复工单/查询在进行测试/查询操作时的安全问题
-+ 新增查询省略显示
-+ 优化查询逻辑,提高单一连接利用率。 
-+ 修复自动联想多窗口时重复提示的问题
+### 2022-11-14 Yearning 3.1.1.1
+- Resolved the issue where rollback statements executed in ascending order, causing dependency errors (changed to descending order).
+- Adjusted debounce logic to prevent duplicate submissions.
+- Fixed the issue where querying with an order time didn't work.
+- Corrected anomalies in rollback statements when changing table character sets.
+- Fixed the problem allowing submission of empty SQL statements.
+- Implemented front-end caching for list pages.
+- Resolved audit anomalies with enumerations.
+- Fixed the issue where execution time was not displayed.
+- Corrected errors in creating separate index statements for table rollback statements.
+- Fixed the admin authorization statement error during installation initialization.
 
-## 2022-07-23 Yearning 3.0.4
-+ 修复工单无法撤销的问题 
-+ 修复首页文案错误
-+ 修复工单申请搜索异常的问题 
-+ 修复语句执行失败文档异常的问题 
-+ 修复工单无法生成回滚语句的问题
-+ 修复初始化缺少表结构的问题 
+### 2022-09-15 Yearning 3.1.0
+- Resolved the issue of SQL connections not being released after detection/execution.
+- Fixed the issue where auditors couldn't perform audits without data source permissions.
 
-## 2022-07-19 Yearning 3.0.3
-+ 修复数据清除无法使用的问题
-+ 修复字段长度不足导致无法提交工单的问题
-+ 修复查询联想数据过大导致浏览器SessionStorage配额超限的问题
-+ 修复回滚语句为空时依然能够提交回滚语句的问题
-+ 修复DDL语句 AUTO_INCREMENT审核报错的问题
-+ 修复用户无法添加的问题
-+ 修复查询数据源切换后不同源相同数据库名无法展开的问题
-+ 修复关键词检查异常的问题
-+ 修复docker安装时异常panic的问题 #610 
-+ 修复datetime(3)类型不能正常插入精确到毫秒的时间值 #616 
-+ 修复SQL检测时，不能drop联合索引，自增列主键不得删除 #612 
-+ 支持DRDS2.0
-+ 审核详情页新增工单说明展示
-+ 添加 检测/美化按钮提示
-+ gorm版本升级为v2版本
-+ 代码组织优化，开发环境升级为go1.18版本
+### 2022-09-01 Yearning 3.0.9
+- Optimized the audit list to prevent freezing with large batches of SQL.
+- Enhanced the layout for the white theme.
+- Corrected email sending issues for SSL non-465 ports.
 
+### 2022-08-18 Yearning 3.0.8
+- Added i18n English support (currently for front-end content only).
+- Fixed the narrative and title errors in push notifications (affecting versions >= 3.0.5).
+- Resolved issues with switching databases when special symbols are included in the database name during queries (#661).
+- Enhanced migration script experience (for migrations from version 2.3.5 to 3.x).
 
-## 2022-06-20 Yearning 3.0.1
-+ 添加用户撤销工单功能
-+ 添加切换查询数据源功能
-+ 查询增加用户自行结束会话功能
-+ 优化查询审核逻辑,开启查询审核的查询工单不可切换数据源
-+ 修复数据源名称无法修改的问题
-+ 优化数据源查询逻辑
-+ 新增审核规则DDLAllowMultiAlter  DDL单个工单允许多alter语句提交
-+ 修复流程编辑后新建流程将老流程替换的问题
+### 2022-08-18 Yearning 3.0.7
+- Resolved issues with test message not sending.
+- Fixed console errors in order time field queries.
+- Addressed issues of duplicate order submissions.
+- Corrected disordered column sequences in exported XLS queries.
+- Improved the visualization of query results.
+- Enhanced style for order detail progress information.
+- Improved container deployment with custom secret key support.
+- Optimized OIDC login logic.
 
-## 2022-06-02 Yearning 3.0.0-GA
+### 2022-08-11 Yearning 3.0.6
+- Enhanced WebSocket query reconnection logic.
+- Fixed tab display anomalies in query results.
+- Solved message format issues in version 3.0.5.
+- Resolved issues with certain query formats causing sensitive data exposure.
 
-**设计**
+### 2022-08-06 Yearning 3.0.5
+- Fixed freezing issues when more than 10 DDL statements were submitted.
+- Resolved length error issues when checking enum types.
+- Addressed security issues in order/query during testing/query operations.
+- Introduced query abbreviation display.
+- Optimized query logic for increased connection utilization efficiency.
+- Fixed repeated prompts in multi-window auto-suggestion scenarios.
 
-1. 前端页面重新绘制。采用vite+vue3.2开发模式。全局页面默认采用暗黑主题,支持主题切换(可在个人详情处更换配色方案)。
-2. 统一布局及设计语言。
-3. 优化工单申请布局，采用卡片布局并支持全文搜索。
-4. 全新设计的审核/查询详情页。
+### 2022-07-23 Yearning 3.0.4
+- Fixed issues preventing order revoking.
+- Corrected homepage narrative errors.
+- Resolved anomalies in order application searches.
+- Fixed execution failure document anomalies.
+- Addressed issues preventing rollback statement generation for orders.
+- Corrected initialization issues with missing table structures.
 
-**审核引擎**
-1. 全新重构的审核引擎。新增hit cache 大幅提高批量SQL审核的执行效率。
-2. 优化相关代码减少重复逻辑。
-3. 支持gh/osc等脚本执行
-4. 支持SQL语句上下文关联审核
-5. 升级AST语法树为最新版本
+### 2022-07-19 Yearning 3.0.3
+- Resolved issues with unusable data clearance.
+- Fixed insufficient field length preventing order submission.
+- Addressed browser SessionStorage quota exceedance issues due to large query suggestions.
+- Fixed issues allowing submission of rollback statements even when empty.
+- Resolved AUTO_INCREMENT DDL audit errors.
+- Solved user addition issues.
+- Fixed database name expansion issues when switching data sources with identical names.
+- Corrected keyword check anomalies.
+- Resolved panic anomalies in Docker installations (#610).
+- Fixed issues with inserting millisecond-accurate datetime(3) values (#616).
+- Resolved issues preventing the dropping of composite indexes in SQL checks; PK AUTOINCREMENT columns must not be deleted (#612).
+- Added support for DRDS 2.0.
+- Included order description display in audit details.
+- Added detection/beautification button prompts.
+- Upgraded gorm to version v2.
+- Optimized code organization and upgraded to Go 1.18 for the development environment.
 
-**查询**
-1. 全新的查询界面,支持快捷键调出剪贴板，支持库/表搜索
-2. 右键表名可直接查询表数据
-3. 编辑框支持选中执行,支持多条同时执行,支持快捷键执行
-4. 导出文件格式更改为xls
-5. 查询连接改用websocket(再也不存在SQL执行时间大于http超时时间从而永远查不出来的尴尬)
-6. 查询数据采用msgpack格式大幅压缩数据大小
-7. 查询表格支持resize功能可进行宽度拖拽
-8. 自动联想关联至字段级别
-9.  大幅优化脱敏查询性能
-10. 优化查询工单超过查询时限后状态未及时更新的问题
-12.优化脱敏逻辑，基于数据源而不是基于全局
-1.  新增查询历史记录,可一键复制当前查询期内之前执行的SQL语句
+### 2022-06-20 Yearning 3.0.1
+- Added functionality for users to revoke orders.
+- Enabled switching of query data sources.
+- Implemented session end function for users in queries.
+- Optimized query audit logic; orders requiring query audits cannot switch data sources.
+- Fixed issues preventing modification of data source names.
+- Enhanced data source query logic.
+- Introduced DDLAllowMultiAlter audit rule, enabling multiple alter statements in a single DDL order.
+- Fixed issues where editing a process replaced old processes when creating a new one. 
 
+### 2022-06-02 Yearning 3.0.0-GA
 
-**审核**
-1. 用户不再需要选择上级审核人,由系统直接发送给流程节点的审核人，如该节点存在多个审核人则该节点的审核人均拥有审核权利但只能有一位审核人进行状态变更
-2. 增加工单提交页面退出/刷新 确认提醒
-3. SQL工单新增评论功能
-4. OSC进度不再以百分比显示,而是显示全部执行信息,方便排错
+**Design**
+1. Redesigned the front-end interface using vite+vue3.2 development model. The default theme is dark, with an option for theme switching, which can be changed in personal settings.
+2. Unified layout and design language.
+3. Optimized order application layout to use a card style with full-text search support.
+4. Completely redesigned audit/query details page.
 
+**Review Engine**
+1. Completely restructured review engine with added hit cache, significantly improving performance in auditing batch SQLs.
+2. Optimized related code to reduce redundant logic.
+3. Supports execution of gh/osc scripts.
+4. Supports context-aware audits for SQL statements.
+5. Upgraded AST syntax tree to the latest version.
 
-**其他**
-1. 优化排除数据库逻辑，基于数据源而不是基于全局
-2. 优化流程，实现与环境分离,流程可绑定在1个或多个数据源中
-3. 优化定时执行，等待时间超过mysql最大连接超时时间，在真正执行前才初始化
-4. 新增用户水印功能
-5. 新增数据源负责人,该负责人将会作为查询审核人
-6. 新增LDAP测试用户选项，优化LDAP测试结果逻辑
-7. 新增LDAP用户属性映射功能,可将LDAP对应的字段数据映射进Yearning指定的用户字段中。实现LDAP用户登录后自动更新真实姓名,部门,邮箱等用户信息
-8.  新增debounce防抖机制,优化工单提交,检测,登录动作，避免快速点击时多次提交的问题
+**Query**
+1. A brand-new query interface, supporting shortcuts for clipboard access and database/table searches.
+2. Allows querying table data by right-clicking on the table name.
+3. The editor supports running selected or multiple queries simultaneously and via shortcuts.
+4. Changed export file format to XLS.
+5. Converted query connections to WebSocket, eliminating timeouts during prolonged SQL execution.
+6. Compressed query data using msgpack format to significantly reduce size.
+7. The query table supports resizing and width adjustments via drag-and-drop.
+8. Auto-suggestions now associate to the field level.
+9. Drastically improved performance for desensitized queries.
+10. Fixed the issue where query state did not update in time if query duration exceeded limits.
+12. Optimized desensitization logic to be data source-based rather than global.
+13. Added query history records, allowing one-click copy of SQL statements executed during the current query session.
 
-#### 2.3.5版本更新至3.0
+**Audit**
+1. Users no longer need to choose a superior auditor; the system automatically sends it to the flow node's auditor. If multiple auditors exist, they all have audit rights, but only one can change the state.
+2. Added exit/refresh confirmation prompts on the order submission page.
+3. Introduced a comment function for SQL orders.
+4. OSC progress now displays complete execution information instead of just a percentage, making troubleshooting easier.
 
-**当前RC版本仅支持2.3.5版本更新迁移**
+**Others**
+1. Optimized exclusion of databases to be based on data sources instead of global.
+2. Decoupled processes from environments; processes can bind to one or more data sources.
+3. Optimized scheduled execution to ensure that initialization only occurs before actual execution when wait time exceeds MySQL's max connection timeout.
+4. Added a user watermark feature.
+5. Introduced a data source leader, who will also serve as the query auditor.
+6. Added an LDAP test user option, optimizing LDAP test results logic.
+7. Added LDAP user attribute mapping, enabling mapped fields from LDAP into specified Yearning user fields. This allows automatic updating of real name, department, and email upon LDAP user login.
+8. Added a debounce mechanism to optimize order submission, checking, and login actions to prevent multiple submissions from rapid clicks.
 
-1.备份原Yearning数据库
+#### Update from Version 2.3.5 to 3.0
 
-2.执行Yearning目录下 **migrate** 二进制文件。请注意 必须在**Yearning**启动之前执行！！
+**Current RC version only supports updates from 2.3.5**
+1. Backup the original Yearning database.
+2. Execute the **migrate** binary file in the Yearning directory. Ensure this is done **before** starting Yearning!
+3. Start Yearning normally.
 
-3.正常启动Yearning
+**Since the process, database exclusion, and desensitization logic have changed to be data source-based, please modify the configuration at the data source post-update.**
 
-**由于流程,排除数据库,脱敏逻辑更改为基于数据源，请在更新后在数据源处修改配置**
+### 2022-05-27 Yearning 3.0.0-RC13
+- Fixed SQL rollback panic under high concurrency.
+- Addressed migration tool issues causing user permission exceptions when user groups are empty.
+- Fixed errors resulting from incorrect secret keys.
+- Resolved issues where the editor allowed selection of statements for testing during audit and order detection.
+- Added refresh button to the audit page.
+- Fixed form validation errors during order submissions.
+- Optimized card-header style.
 
+### 2022-05-20 Yearning 3.0.0-RC12
+- Corrected command prompt errors in startup parameters (—config corrected to -config).
+- Fixed issue where the registration popup on login would not close post-registration.
+- Fixed validation checks for DDL statements with empty string defaults.
+- Resolved issues with varchar type field length checks based on byte length.
+- Fixed problems where DML/DDL affect row count was not effective.
+- Resolved issue of agreeing to audit SQL statements without prior checks.
+- Addressed issues where data submission buttons were not disabled after SQL checks.
+- Fixed connection interruption due to prolonged idle wait times.
 
-## 2022-05-27 Yearning 3.0.0-RC13
-+ 修复高并发下SQL回滚panic的问题
-+ 修复迁移工具导致用户权限组为空时用户权限异常的问题
-+ 修复秘钥不正确导致的报错问题
-+ 修复审核及工单检测时编辑器可以选中语句测试的问题
-+ 审核页面添加刷新按钮
-+ 修复工单提交form校验错误的问题
-+ 优化card-header 样式
+### 2022-05-11 Yearning 3.0.0-RC11
+- Enhanced the display of the normal theme.
+- Resolved anomalies in audit rules requiring table creation with fields.
+- Fixed issue allowing system re-entry through back operation after logout.
+- Resolved panic issues with the migration tool.
 
-## 2022-05-20 Yearning 3.0.0-RC12
-+ 修复启动参数命令提示错误的问题 ( —config 提示为-config)
-+ 修复登录页用户注册弹出框不会在注册后关闭的问题
-+ 修复ddl语句默认值空字符串，不能通过校验检查
-+ 修复varchar类型字段长度检测基于字节长度的问题
-+ 修复DML/DDL 影响行数，不生效的问题
-+ 修复SQL语句在不经检测依然可以审核同意的问题
-+ 修复SQL检测后更改数据提交按钮没有禁用的问题
-+  修复查询空闲等待时间过长导致连接异常中断的问题
+### 2022-05-09 Yearning 3.0.0-RC10
+- Added merge function for DDL audit alter statements.
+- Introduced search function in order application selection box.
+- Added theme change feature under Personal Settings in the top header.
+- Fixed issue preventing users from returning to the query portal if a query order was ended early by the auditor.
 
-## 2022-05-11 Yearning 3.0.0-RC11
-+ 优化普通主题显示效果
-+ 修复建表必须拥有字段审核规则异常的问题
-+ 修复退出后仍可通过后退操作进入系统的问题
-+ 修复迁移工具panic问题
-
-## 2022-05-09 Yearning 3.0.0-RC10
-+ 新增DDL审核alter语句merge功能
-+ 新增工单申请处选择框搜索功能
-+ 新增主题更换功能 ->  顶部Header右侧 个人设置中 
-+ 修复查询工单被审核人提前结束后，使用者无法返回查询入口的问题
-
+### 2022-05-07 Yearning 3.0.0-RC9
+- Fixed failures caused by added spaces post-SQL beautification.
+- Optimized related button text.
+- Corrected display anomalies in resubmission and rollback statement submission buttons.
+- Added loading indicator for data source test connections.
   
-## 2022-05-07 Yearning 3.0.0-RC9
-+ 修复SQL美化后多出空格导致执行失败的问题
-+ 优化相关按钮文案
-+ 修复重新提交及回滚语句提交按钮显示异常的问题
-+ 数据源测试连接新增loading
-  
-## 2022-05-06 Yearning 3.0.0-RC8
-+ 修复删除数据源文案提示错误
-+ 新增工单同意确认提示框
-+ 修复工单中SQL语句为空点击执行导致程序崩溃的问题
-+ 修复迁移脚本未对查询数据源数据处理的问题
-+ 新增LDAP测试用户选项，优化LDAP测试结果逻辑
-+ 新增LDAP用户属性映射功能,可将LDAP对应的字段数据映射进Yearning指定的用户字段中。实现LDAP用户登录后自动更新真实姓名,部门,邮箱等用户信息
-+ 新增查询历史记录,可一键复制当前查询期内之前执行的SQL语句
-+ 新增数据源负责人,该负责人将会作为查询审核人
-+ 更换登录背景视频,防止眩晕
-+ 新增debounce防抖机制,优化工单提交,检测,登录动作，避免快速点击时多次提交的问题
+## Change Log
 
-Yearning采用自动表结构同步 无需手动更新表结构。只需**停止原服务并替换安装包后重新启动**即可
+### 2022-05-06 Yearning 3.0.0-RC8
+- Fixed incorrect text prompts when deleting a data source.
+- Added a confirmation prompt box for order approval.
+- Resolved the issue where executing an empty SQL statement in an order caused a program crash.
+- Fixed issues in the migration script that did not process query data source information.
+- Introduced LDAP test user option, improving LDAP test result feedback.
+- Added LDAP user attribute mapping, enabling LDAP fields to be mapped into Yearning user fields. This allows LDAP users to log in and automatically update their real names, departments, and emails.
+- Added query history feature, allowing users to copy previously executed SQL statements within the current session.
+- Added a role for data source leaders, who will act as query auditors.
+- Changed login background video to prevent dizziness.
+- Introduced a debounce mechanism to optimize order submission, checking, and login actions, preventing multiple submissions from rapid clicks.
 
-> 在一些特殊的升级情况中(破坏性变更)需要手动进行数据同步操作.如在版本更新公告中并无提示破坏性升级则无视以下命令!
+Yearning uses automatic table structure synchronization, so no manual updates are required. Simply **stop the existing service, replace the installation package, and then restart** to apply updates.
+
+> In some specific upgrade situations (destructive changes), manual data synchronization is necessary. If the version update announcement doesn't mention destructive upgrades, you can ignore the following command:
 
 ```shell
 ./Yearning migrate
 ```
 
 ::: warning
-#### 2.3.5版本更新至3.0.0
+#### Upgrading from Version 2.3.5 to 3.0.0
 
-**当前RC版本仅支持2.3.5版本更新迁移**
+**Current RC version supports migration only from version 2.3.5**
 
-1.备份原Yearning数据库
+1. Backup the original Yearning database.
 
-2.执行Yearning目录下 **./migrate** 二进制文件。请注意 必须在**Yearning**启动之前执行！！
+2. Execute the **./migrate** binary file in the Yearning directory. Ensure this is done **before** starting Yearning!
 
-3.正常启动Yearning
+3. Start Yearning normally.
 :::
 
 ::: danger
-由于在一些新版本中会增加一些新的变更，请在更新后关闭Yearning页面重新登录后进行使用。
-由于流程,排除数据库,脱敏逻辑更改为基于数据源，请在更新后在数据源处修改配置。
+In some new versions, there may be additional changes. Please close and reopen the Yearning page to log in again after the update.
+Since processes, exclusion of databases, and desensitization logic have changed to be data source-based, modify configurations in the data sources after updating.
 :::

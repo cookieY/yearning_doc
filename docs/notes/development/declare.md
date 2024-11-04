@@ -1,34 +1,31 @@
 ---
-title: 协议声明
+title: License Declaration
 createTime: 2024/11/04 16:56:47
 permalink: /development/u13ykizb/
 ---
 
-# 开源协议申明
+# Open Source License Declaration
 
-Yearning 遵循AGPL协议。(不含审核引擎项目Juno)
+Yearning is licensed under the AGPL license. (This does not include the Juno audit engine project)
 
-该协议具体约束及权利如下:
+The specific constraints and rights under this license are as follows:
 
-### 被授权人权利
+### Rights of the Licensee
 
-被授权人有权利使用、复制、修改、合并、散布
+The licensee has the right to use, copy, modify, merge, and distribute the software.
 
-### 被授权人义务
+### Obligations of the Licensee
 
-* 未经原作者授权不得将Yearning 用于任何商业目的。包括通过网络提供任何基于Yearning的商业服务。
+* Yearning may not be used for any commercial purposes without the author's permission. This includes providing any commercial services based on Yearning over the internet.
 
-* 如果你修改了代码，需要在被修改的文件中说明。
+* If you modify the code, you must indicate it in the modified files.
 
-* 如二次开发并公布的情况下(内部使用不在该条款之内)，该软件必须为开源项目，不可为任何商业性质的商业软件。如需商业化必须获得原作者授权。
+* If you engage in secondary development and plan to publish it (internal use is not covered by this clause), the software must remain an open-source project and cannot be of any commercial nature. For commercialization, authorization from the original author is required.
 
-* 本平台所有条款符合相应开源许可，请严格按照相关许可使用及开发。
+* All terms of this platform comply with the corresponding open-source license. Please adhere strictly to the relevant license for use and development.
 
-## 注意事项
+## Important Notes
 
-Yearning后端及前端代码基于AGPL3.0(审核引擎项目Juno代码不在开放范围,严禁商业使用)
+The backend and frontend code of Yearning are based on AGPL 3.0 (the Juno audit engine project is not open and strictly prohibited for commercial use).
 
-**开源版本已实现net/rpc调用，可执行可编译运行。**
-
-**不建议初学者尝试二次开发或当做学习项目**
-
+**The open-source version includes net/rpc calls and can be executed and compiled.**

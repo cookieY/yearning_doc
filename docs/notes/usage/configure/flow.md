@@ -1,69 +1,67 @@
 ---
-title: 流程
+title: Flow
 createTime: 2024/11/04 15:53:52
 permalink: /usage/6vo8fvzk/
 ---
 
-### 前言
+### Introduction
 
-Yearning着重于SQL语句审核及审批流程的实现。在一般场景中我们希望于实现以下的审批流程:
-
-```
-开发人员 -> DBA审核并执行
-```
-
-当业务不断扩大部门层级增多后我们希望拥有多层级的审批流程:
+Yearning focuses on the implementation of SQL statement audits and approval workflows. In typical scenarios, we aim to implement the following approval workflow:
 
 ```
-开发人员 -> 开发主管审批 -> 项目负责人审批-> DBA审核并执行 (多层级)
+Developer -> DBA reviews and executes
 ```
 
-对于以上的需求及场景均可通过Yearning自定义流程功能实现。
+As the business grows and departmental levels increase, we may wish to have multi-level approval workflows:
 
-### 创建流程
+```
+Developer -> Development Manager Approval -> Project Leader Approval -> DBA Review and Execution (Multi-Level)
+```
 
-进入 **管理->流程** 页面，点击新建流程按钮
+The above requirements and scenarios can be achieved using Yearning's custom workflow feature.
 
-![](/images/newflow.png)
+### Creating a Workflow
 
-名词释义:
+Navigate to the **Management->Processes** page and click the "New Process" button.
 
-+ 流程名称 (顾名思义)
-+ 阶段名称 (当前设置的流程阶段的名称)
-+ 阶段类型 (当前阶段的类型,共分两种:1.审核,2.执行)
-+ 审核人员 (指定当前阶段审核人员范围,可多选)
-+ 添加 (点击后将该阶段添加至流程中)
+![New Process Button](/images/newflow.png)
+
+Glossary:
+
++ Process Name (as the name implies)
++ Stage Name (the name of the current set process stage)
++ Stage Type (type of the current stage, divided into two: 1. Review, 2. Execute)
++ Reviewers (assign the range of reviewers for the current stage, multiple selections allowed)
++ Add (click to add this stage to the process)
 
 ::: warning
-注意！每个流程的末端阶段的步骤类型必须为**执行**类型,否则该流程下的审核工单将无法成功完结并执行。
+Note! The last stage's step type in each process must be of **Execute** type; otherwise, the audit order under this process cannot be successfully completed and executed.
 
-该流程功能仅针对工单审批不支持查询审批。
+This process function is only applicable for order approval and does not support query approval.
 
-步骤添加后并不代表该流程已创建成功，点击**保存按钮**后即可保存
+Adding a step does not mean the process is successfully created; click the **Save Button** to save.
 
-中间阶段(既提交及最后执行阶段除外)目前最多支持5层
+The intermediate stages (except the initial submission and final execution stage) currently support up to 5 levels.
 :::
 
-### 修改流程
+### Modifying a Workflow
 
-![](/images/newflow02.png)
+![Modify Workflow](/images/newflow02.png)
 
-当我们需要对某一处阶段的数据进行调整时，我们可以点击右侧流程图中该阶段的**编辑按钮**进行编辑。
-::: tip
-需要注意的是编辑仅可对该流程的审核人员范围进行变更，不支持对阶段类型，阶段名称进行修改。如需对这两处进行修改请删除该阶段重新添加。
-:::
-
-当我们需要对阶段的位置进行更换时，我们可以选择需要更换位置的阶段点击 **向上移动 / 向下移动** 进行位置更换
-
-
-## 数据源应用该流程
-
-![](/images/flowtarget.png)
-
-创建完流程后，在 管理->数据源 处找到需要赋予流程的数据源，将流程添加到该数据源中并点击保存。
+When adjustments to a particular stage's data are needed, click the **Edit Button** for that stage in the flowchart on the right.
 
 ::: tip
-只有当数据源被赋予了流程之后,该数据源才被允许提交审批工单。
+Note that editing can only change the range of reviewers for a stage and does not support modifications to the stage type or name. To modify these two, remove the stage and add it again.
 :::
 
+To change the position of a stage, select the stage you want to reposition and click **Move Up / Move Down** to change its position.
 
+## Apply the Workflow to the Data Source
+
+![Apply Workflow](/images/flowtarget.png)
+
+After creating a workflow, go to Management->Data Sources, find the data source to which you want to assign the workflow, add the workflow to the data source, and click save.
+
+::: tip
+A data source is only allowed to submit approval orders once it has been assigned a workflow.
+:::

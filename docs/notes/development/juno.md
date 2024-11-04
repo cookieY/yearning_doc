@@ -1,32 +1,34 @@
 ---
-title: Juno 调用
+title: Juno Invocation
 createTime: 2024/11/04 17:08:00
 permalink: /development/16e5vp2y/
 ---
-## 如何使用
-1. 使用docker部署juno
+
+## How to Use
+
+1. Deploy Juno using Docker:
    ```shell 
    docker run -d -e MYSQL_USER=${YEARNING_DB_USER} -e MYSQL_PASSWORD=${YEARNING_DB_PASSWORD} -e MYSQL_ADDR=${YEARNING_DB_ADDR:PORT} -e MYSQL_DB=${YEARNING_DB}  -p 50001:50001 yeelabs/juno
    ```
-2. 在conf.toml中将juno地址填写到GrpcAddr参数内(默认127.0.0.1:50001)
-3. 进行调试
+2. In the `conf.toml`, enter the Juno address in the `GrpcAddr` parameter (default is 127.0.0.1:50001).
+3. Proceed with debugging.
 
 ::: tip
-juno与Yearning 共用同一个数据库。Yearning项目内的config.toml文件中RpcAddr配置项填写为juno所在主机的ip(请勿使用本地回环地址连接)及端口
+Juno shares the same database with Yearning. In the Yearning project's config.toml file, the `RpcAddr` configuration should be filled with the IP of the host where Juno is located (do not use the local loopback address) and the port.
 
-当前juno支持amd64/arm64。
+Currently, Juno supports amd64/arm64 architectures.
 :::
 
-### 调用方法
+### Invocation Methods
 
-juno 采用原生net/rpc 库进行通信，主要提供以下方法
+Juno uses the native net/rpc library for communication and primarily provides the following methods:
 
-1. Check （SQL语句检测）
-2. MergeAlterTables （多条DDL语句合并）
-3. Exec （SQL语句执行）
-4. Query （SQL查询）
+1. **Check** (SQL statement validation)
+2. **MergeAlterTables** (Merging multiple DDL statements)
+3. **Exec** (SQL statement execution)
+4. **Query** (SQL querying)
 
-RPC初始化代码
+RPC Initialization Code:
 
 ```go
 // Yearning/src/lib/rpc.go
@@ -39,8 +41,10 @@ func NewRpc() *rpc.Client {
 }
 ```
 
+SQL Validation Invocation:
+
 ```go
-// SQL检测调用 
+// SQL Check Invocation 
 // Yearning/src/handler/fetch/fetch.go 204
 var rs []engine.Record
 client.Call("Engine.Check", engine.CheckArgs{
@@ -55,8 +59,11 @@ client.Call("Engine.Check", engine.CheckArgs{
 			Rule:     model.GloRole,
 		}, &rs)
 ```
+
+SQL Execution Invocation:
+
 ```go
-// SQL执行调用
+// SQL Execution Invocation
 // Yearning/src/handler/order/audit/impl.go 70
 var isCall bool
 client.Call("Engine.Exec", &ExecArgs{
@@ -67,10 +74,13 @@ client.Call("Engine.Exec", &ExecArgs{
 			Username: source.Username,
 			Password: lib.Decrypt(source.Password),
 			Message:  model.GloMessage,
-		}, &isCall
+		}, &isCall)
 ```
+
+SQL Query Invocation:
+
 ```go
-// SQL查询调用
+// SQL Query Invocation
 // Yearning/src/handler/personal/impl.go 65
 var rs []engine.Record
 client.Call("Engine.Query", &QueryArgs{

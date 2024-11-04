@@ -1,15 +1,15 @@
 ---
-title: 查询审核
+title: Review
 createTime: 2024/11/04 16:42:26
 permalink: /usage/saofd1yf/
 ---
 
-![](/images/query07.png)
+![Query Review](/images/query07.png)
 
-数据源负责人通过 审核 -> 查询 页面查看需要审核的查询工单(未开启查询审核时工单将自动批准)
+Data source owners can view query work orders that need approval via the Approval -> Query page (if query approval is not enabled, work orders will be automatically approved).
 
-## 查询详情
+## Query Details
 
-![](/images/query08.png)
+![Query Details](/images/query08.png)
 
-点击对应查询工单详情按钮后进入，可查看该工单的基本信息以及执行的SQL语句。
+Click the detail button of the corresponding query work order to view the work order's basic information and the executed SQL statements.

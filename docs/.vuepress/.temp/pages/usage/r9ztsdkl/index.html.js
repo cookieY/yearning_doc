@@ -1,5 +1,5 @@
-import comp from "/Users/henryyee/PersonalProjects/yearning_guide/docs/.vuepress/.temp/pages/usage/r9ztsdkl/index.html.vue"
-const data = JSON.parse("{\"path\":\"/usage/r9ztsdkl/\",\"title\":\"权限组\",\"lang\":\"en-US\",\"frontmatter\":{\"title\":\"权限组\",\"createTime\":\"2024/11/04 15:53:04\",\"permalink\":\"/usage/r9ztsdkl/\"},\"headers\":[{\"level\":2,\"title\":\"创建权限组\",\"slug\":\"创建权限组\",\"link\":\"#创建权限组\",\"children\":[]},{\"level\":2,\"title\":\"编辑权限组\",\"slug\":\"编辑权限组\",\"link\":\"#编辑权限组\",\"children\":[]}],\"readingTime\":{\"minutes\":0.38,\"words\":115},\"filePathRelative\":\"notes/usage/configure/permissionGroup.md\",\"bulletin\":false}")
+import comp from "/root/guide/docs/.vuepress/.temp/pages/usage/r9ztsdkl/index.html.vue"
+const data = JSON.parse("{\"path\":\"/usage/r9ztsdkl/\",\"title\":\"Permission Groups\",\"lang\":\"en-US\",\"frontmatter\":{\"title\":\"Permission Groups\",\"createTime\":\"2024/11/04 15:53:04\",\"permalink\":\"/usage/r9ztsdkl/\"},\"headers\":[{\"level\":2,\"title\":\"Creating Permission Groups\",\"slug\":\"creating-permission-groups\",\"link\":\"#creating-permission-groups\",\"children\":[]},{\"level\":2,\"title\":\"Editing Permission Groups\",\"slug\":\"editing-permission-groups\",\"link\":\"#editing-permission-groups\",\"children\":[]}],\"readingTime\":{\"minutes\":0.31,\"words\":94},\"filePathRelative\":\"notes/usage/configure/permissionGroup.md\",\"bulletin\":false}")
 export { comp, data }
 
 if (import.meta.webpackHot) {

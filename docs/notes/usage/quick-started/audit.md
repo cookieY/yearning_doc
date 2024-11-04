@@ -1,31 +1,31 @@
 ---
-title: 工单审批/执行
+title: Approval/Execution
 createTime: 2024/11/04 16:37:59
 permalink: /usage/76kpl0j9/
 ---
 
-进入 审核->工单 页面选择需要审批的工单点击详情按钮进入该工单审核详情页
+Navigate to the Approval -> Work Orders page, select the work order you need to approve, and click the details button to access the work order approval details page.
 
-![](/images/audit01.png)
+![Work Order Approval Details](/images/audit01.png)
 
-布局介绍
-+ 页面上侧
-  + 工单基本信息展示
-  + 审核按钮
-+ 页面下侧
-  + 工单流程及进度
-  + SQL语句展示 鼠标右键菜单中选择 **SQL检测** 按钮进行SQL语句检测或通过 **SQL美化** 按钮进行SQL语句美化
-  + SQL语句审核结果  
+Layout Overview:
++ Upper Side of the Page:
+  + Display of basic work order information
+  + Approval buttons
++ Lower Side of the Page:
+  + Work order process and progress
+  + SQL statement display, with options such as **SQL Check** for SQL statement verification or **SQL Beautify** for SQL statement formatting accessible from the right-click menu.
+  + SQL statement approval results  
 
 ::: tip
-+ 当焦点处于编辑器中时，可以采用Ctrl/Cmd + E 快捷键触发SQL检测
-+ 当焦点处于编辑器中时，可以采用Ctrl/Cmd + B 快捷键触发SQL美化
-+ 同时该编辑器支持常用文本快捷键
-+ **同意**按钮只有在检测语句 **错误等级** 均为0时才会激活
-+ 当流程最后节点人员通过后Yearning将会自动执行该工单
++ When the focus is in the editor, use the Ctrl/Cmd + E shortcut to trigger SQL check.
++ When the focus is in the editor, use the Ctrl/Cmd + B shortcut to trigger SQL beautification.
++ The editor supports common text shortcuts.
++ The **Approve** button will only be activated when all **Error Levels** in the checked statements are 0.
++ After the final node personnel in the process have given their approval, Yearning will automatically execute the work order.
 :::
 
-## 回滚工单生成
-![](/images/audit02.png)
+## Generating Rollback Work Orders
+![Generate Rollback Work Order](/images/audit02.png)
 
-工单执行成功且开启生成回滚语句时，如需对执行的SQL进行回滚操作 请点击该工单详情页 **结果栏** 点击 **提交回滚语句**之后将会生成一个新的工单(包含此回滚语句)重新走完流程后即可执行
+If the work order executes successfully and rollback statement generation is enabled, you can roll back the executed SQL by clicking the **Submit Rollback Statement** button in the **Results Section** of the work order details page. This will create a new work order (containing the rollback statement) that will follow the process through to execution.

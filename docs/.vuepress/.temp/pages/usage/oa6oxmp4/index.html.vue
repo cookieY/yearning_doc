@@ -1,37 +1,37 @@
-<template><div><p>点击工单申请页面，根据实际提单需求选择DML/DDL/Query中的某一类进行工单提交。</p>
-<p><img src="/images/order01.png" alt=""></p>
-<p>点击对应数据源卡片进入工单提交页面</p>
-<p><img src="/images/order02.png" alt=""></p>
-<p>布局介绍</p>
+<template><div><p>Click on the work order application page and select either DML, DDL, or Query based on your submission needs to submit a work order.</p>
+<p><img src="/images/order01.png" alt="Work Order Submission"></p>
+<p>Click the corresponding data source card to enter the work order submission page.</p>
+<p><img src="/images/order02.png" alt="Work Order Submission Page"></p>
+<p>Layout Overview:</p>
 <ul>
-<li>页面左侧
+<li>Left Side of the Page:
 <ul>
-<li>工单信息填写，其中数据库，工单说明为必填。</li>
-<li>当选择对应数据表之后点击<strong>获取表结构</strong>按钮将会展示该数据表字段及索引信息</li>
-<li>定时执行 该功能依赖Yearning所部署服务器上本地时间，请将服务器时间与本地使用时间保持一致，否则将会出现错误。同时，由于Yearning并未依赖其他第三方定时服务，如在定时执行时间之前Yearning崩溃/重启将会丢失定时信息导致工单无法执行。</li>
-<li>当<strong>是否回滚</strong>选项选择为 <strong>是</strong> 时，该工单提交的SQL语句执行时如果该数据库开启binlog则会自动生成对应的回滚语句并保存。</li>
+<li>Fill in the work order information, with fields for Database and Work Order Description required.</li>
+<li>After selecting the corresponding data table, click the <strong>Get Table Structure</strong> button to display the field and index information of the data table.</li>
+<li>Scheduled Execution: This function relies on the local time on the server where Yearning is deployed. Synchronize the server time with local usage time to avoid errors. Additionally, since Yearning does not rely on third-party scheduling services, if Yearning crashes or restarts before the scheduled execution time, it will lose the schedule and the work order will not execute.</li>
+<li>If the <strong>Rollback</strong> option is set to <strong>Yes</strong>, a rollback statement will be automatically generated and saved if the database supports binlog during the execution of the submitted SQL statement.</li>
 </ul>
 </li>
-<li>页面右侧
+<li>Right Side of the Page:
 <ul>
-<li>右上SQL编辑框 请将需要提交的SQL语句填写入该编辑框内，鼠标右键菜单中选择 <strong>SQL检测</strong> 按钮进行SQL语句检测或通过 <strong>SQL美化</strong> 按钮进行SQL语句美化</li>
-<li>右下审核结果区域  当点击 SQL检测 按钮后该区域将会展示该SQL语句的检测结果。</li>
+<li>Top Right SQL Editor Box: Enter the SQL statements to be submitted into this editor box. Use the right-click menu to select the <strong>SQL Check</strong> button for SQL statement verification or the <strong>SQL Beautify</strong> button for formatting.</li>
+<li>Bottom Right Audit Results Area: Displays the inspection results of the SQL statement after clicking the SQL Check button.</li>
 </ul>
 </li>
 </ul>
 <div class="hint-container tip">
 <p class="hint-container-title">Tips</p>
 <ul>
-<li>当焦点处于编辑器中时，可以采用Ctrl/Cmd + E 快捷键触发SQL检测</li>
-<li>当焦点处于编辑器中时，可以采用Ctrl/Cmd + B 快捷键触发SQL美化</li>
-<li>同时该编辑器支持常用文本快捷键</li>
-<li><strong>提交</strong>按钮只有在检测语句 <strong>错误等级</strong> 均为0时才会激活</li>
+<li>When the focus is in the editor, use Ctrl/Cmd + E to trigger SQL check.</li>
+<li>When the focus is in the editor, use Ctrl/Cmd + B to trigger SQL beautification.</li>
+<li>The editor supports common text shortcuts.</li>
+<li>The <strong>Submit</strong> button will only be enabled when all SQL statements have an <strong>Error Level</strong> of 0.</li>
 </ul>
 </div>
 <h2 id="autotask" tabindex="-1"><a class="header-anchor" href="#autotask"><span>AutoTask</span></a></h2>
-<p>自动执行任务:</p>
-<p>用户可通过该功能设置自动执行任务。当提交的dml语句符合相应任务条件。将会自动执行，无需审核人审核。</p>
-<p>该功能仅限dml语句使用。请慎重使用！</p>
+<p>Automatic Task Execution:</p>
+<p>Users can set up automatic task execution with this feature. When the submitted DML statements meet the conditions of an automatic task, they will be executed automatically without reviewer approval.</p>
+<p>This feature is only applicable for DML statements. Use with caution!</p>
 </div></template>
 
 

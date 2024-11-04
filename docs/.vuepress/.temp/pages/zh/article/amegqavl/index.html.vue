@@ -1,4 +1,59 @@
-<template><div><h2 id="_2023-04-24-yearning-3-1-4" tabindex="-1"><a class="header-anchor" href="#_2023-04-24-yearning-3-1-4"><span>2023-04-24 Yearning 3.1.4</span></a></h2>
+<template><div><h2 id="_2024-11-01-yearning-3-1-9" tabindex="-1"><a class="header-anchor" href="#_2024-11-01-yearning-3-1-9"><span>2024-11-01 Yearning 3.1.9</span></a></h2>
+<ul>
+<li>优化了AI助手的流式消息回复格式</li>
+<li>修复了创建数据源时列表不刷新的问题</li>
+<li>修复了 bigint 类型数据精度丢失的问题 #1104</li>
+<li>修复了不支持 SSL 连接执行 SQL 的问题 #1120</li>
+<li>新增 DMLWhereExprValueIsNull 审核参数：检查 DML 语句的 where 条件值是否为 null</li>
+<li>新增审核按钮 #1032</li>
+</ul>
+<h2 id="_2024-07-27-yearning-3-1-8" tabindex="-1"><a class="header-anchor" href="#_2024-07-27-yearning-3-1-8"><span>2024-07-27 Yearning 3.1.8</span></a></h2>
+<ul>
+<li>新增审核按钮防抖，修复审核按钮多次点击导致数据异常的问题</li>
+<li>新增智能助手功能</li>
+<li>新增 SQL语句AI优化，AI 文本生成SQL功能</li>
+<li>新增查询菜单查看表结构的功能 #1057</li>
+<li>新增 MFA认证(赞助版)</li>
+<li>修复 datetime 类型字段检测时可能出现错误异常显示的问题 #1039</li>
+<li>修复查询审核时可以重复提交的问题 #1024</li>
+<li>修复审计人全限制默认显示异常的问题 #991</li>
+<li>更新依赖项,修复安全漏洞</li>
+<li>更新 dockerFile 镜像，修复无法通过环境变量更改语言设置的问题</li>
+</ul>
+<h2 id="_2024-01-02-yearning-3-1-7" tabindex="-1"><a class="header-anchor" href="#_2024-01-02-yearning-3-1-7"><span>2024-01-02 Yearning 3.1.7</span></a></h2>
+<ul>
+<li>修复流程变更后，完成状态工单异常报错导致无法显示信息的问题</li>
+<li>工单搜索新增 终止,撤销，待执行 搜索条件</li>
+</ul>
+<h2 id="_2023-09-08-yearning-3-1-6-3" tabindex="-1"><a class="header-anchor" href="#_2023-09-08-yearning-3-1-6-3"><span>2023-09-08 Yearning 3.1.6.3</span></a></h2>
+<ul>
+<li>修复: 关闭 #901 修复查询一张不存在的表名或者执行一个dml都会让查询页面卡死无法退出</li>
+<li>其他优化</li>
+</ul>
+<h2 id="_2023-08-10-yearning-3-1-6-2" tabindex="-1"><a class="header-anchor" href="#_2023-08-10-yearning-3-1-6-2"><span>2023-08-10 Yearning 3.1.6.2</span></a></h2>
+<ul>
+<li>功能: 关闭 #832 支持自定义审核规则，允许对单一数据源设置审核规则</li>
+<li>功能: 支持多语言,通过config,toml配置文件中指定前后端语言，当前支持中文/英文</li>
+<li>修复: 关闭 #848 修复查询等待时loading标识不显示的问题</li>
+<li>优化: 关闭 #840 优化首页每日工单数显示异常的问题</li>
+<li>优化:  关闭 #790 工单审核页面新增数据源列显示</li>
+<li>优化: 关闭#703 支持定时任务更改执行时间/立即执行/终止执行</li>
+<li>优化: 工单列表排序规则更改为审核中且时间远近进行排序</li>
+<li>优化: 支持DML数据以事务模式执行，请在审核规则内搜索DMLTransaction选项并启用该功能</li>
+<li>优化: 关闭 #795 查询关键字提醒(表名,字段名)限定为当前数据库，当选择数据库时将会获取该数据库的表名字段名</li>
+<li>优化: 查询结果支持点击后复制单元格内容</li>
+<li>优化: 域名地址指定不再通过-s 进行指定更改为通过设置页面进行指定，钉钉卡片支持url跳转</li>
+<li>其他优化</li>
+</ul>
+<h2 id="_2023-07-04-yearning-3-1-5" tabindex="-1"><a class="header-anchor" href="#_2023-07-04-yearning-3-1-5"><span>2023-07-04 Yearning 3.1.5</span></a></h2>
+<ul>
+<li>审核详情页面布局优化</li>
+<li>审核按钮布局优化 #829 #825 #802</li>
+<li>修复审核查询时间范围条件格式化异常的问题</li>
+<li>修复添加datetime类型字段默认值为0000-00-00 00:00:00 报错异常的问题 #823</li>
+<li>修复查询负责人更改后依然可以审核查询工单的问题</li>
+</ul>
+<h2 id="_2023-04-24-yearning-3-1-4" tabindex="-1"><a class="header-anchor" href="#_2023-04-24-yearning-3-1-4"><span>2023-04-24 Yearning 3.1.4</span></a></h2>
 <ul>
 <li>工单/查询工单列表不再采用轮训方式实时获取数据，改用ws</li>
 <li>工单/查询详情采用卡片抽屉式进行展示</li>

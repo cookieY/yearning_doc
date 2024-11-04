@@ -1,5 +1,5 @@
-import comp from "/Users/henryyee/PersonalProjects/yearning_guide/docs/.vuepress/.temp/pages/usage/hf1nqbio/index.html.vue"
-const data = JSON.parse("{\"path\":\"/usage/hf1nqbio/\",\"title\":\"k8s\",\"lang\":\"en-US\",\"frontmatter\":{\"title\":\"k8s\",\"createTime\":\"2024/11/04 15:47:05\",\"permalink\":\"/usage/hf1nqbio/\"},\"headers\":[],\"readingTime\":{\"minutes\":1.33,\"words\":400},\"filePathRelative\":\"notes/usage/k8s.md\",\"bulletin\":false}")
+import comp from "/root/guide/docs/.vuepress/.temp/pages/usage/hf1nqbio/index.html.vue"
+const data = JSON.parse("{\"path\":\"/usage/hf1nqbio/\",\"title\":\"Kubernetes\",\"lang\":\"en-US\",\"frontmatter\":{\"title\":\"Kubernetes\",\"createTime\":\"2024/11/04 15:47:05\",\"permalink\":\"/usage/hf1nqbio/\"},\"headers\":[],\"readingTime\":{\"minutes\":1.32,\"words\":397},\"filePathRelative\":\"notes/usage/k8s.md\",\"bulletin\":false}")
 export { comp, data }
 
 if (import.meta.webpackHot) {

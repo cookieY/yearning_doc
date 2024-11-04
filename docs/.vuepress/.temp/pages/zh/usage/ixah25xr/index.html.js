@@ -1,4 +1,4 @@
-import comp from "/Users/henryyee/PersonalProjects/yearning_guide/docs/.vuepress/.temp/pages/zh/usage/ixah25xr/index.html.vue"
+import comp from "/root/guide/docs/.vuepress/.temp/pages/zh/usage/ixah25xr/index.html.vue"
 const data = JSON.parse("{\"path\":\"/zh/usage/ixah25xr/\",\"title\":\"安装\",\"lang\":\"zh-CN\",\"frontmatter\":{\"title\":\"安装\",\"createTime\":\"2024/11/04 14:39:28\",\"permalink\":\"/zh/usage/ixah25xr/\"},\"headers\":[{\"level\":2,\"title\":\"1.填写配置文件\",\"slug\":\"_1-填写配置文件\",\"link\":\"#_1-填写配置文件\",\"children\":[{\"level\":3,\"title\":\"关于 SecretKey\",\"slug\":\"关于-secretkey\",\"link\":\"#关于-secretkey\",\"children\":[]}]},{\"level\":2,\"title\":\"使用帮助\",\"slug\":\"使用帮助\",\"link\":\"#使用帮助\",\"children\":[]},{\"level\":2,\"title\":\"2.初始化及安装\",\"slug\":\"_2-初始化及安装\",\"link\":\"#_2-初始化及安装\",\"children\":[]},{\"level\":2,\"title\":\"3.启动服务\",\"slug\":\"_3-启动服务\",\"link\":\"#_3-启动服务\",\"children\":[]}],\"readingTime\":{\"minutes\":2.03,\"words\":609},\"filePathRelative\":\"zh/notes/usage/install.md\",\"bulletin\":false}")
 export { comp, data }
 

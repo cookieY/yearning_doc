@@ -1,19 +1,18 @@
-<template><div><p>赞助版实现了基于mysql协议的查询子程序，用户可通过不同的MysqlClient客户端来查询数据，实现原生功能。</p>
-<p>同时C端查询依然支持网页端查询审计,非Query语句拦截,结果脱敏等功能。</p>
-<p>用户点击个人设置查看客户端连接信息,通过不同的连接用户名可连接不同的数据源(该数据源为该用户的Query数据源权限)。</p>
-<p>连接用户由 用户名@数据源ID组成，单Yearning用户的所有C端查询用户共用一个查询密码。</p>
-<p>登录时会检查用户是否存在相关数据源权限,规避恶意提权问题。</p>
-<p><img src="/images/extra05.png" alt=""></p>
-<p>在 navicat/DBeaver 等客户端中输入对应用户名,密码即可连接到该用户的数据源。
-<img src="/images/extra04.png" alt=""></p>
-<p><strong>用户的审计记录与在Yearning 网页端一致。可通过审核--查询找到对应查询工单进行审计</strong></p>
+<template><div><p>The sponsored version implements a query subprogram based on the MySQL protocol, allowing users to query data through various MySQLClient clients, enabling native functionality.</p>
+<p>Additionally, client-side queries still support web-based query auditing, interception of non-query statements, and result desensitization.</p>
+<p>Users can view client connection information by clicking on personal settings and connect to different data sources (those for which the user has query permissions) using different connection usernames. The connection username is composed of the username@DataSourceID. All client-side query users of a single Yearning user share one query password.</p>
+<p>Upon login, the system checks whether the user has relevant data source permissions to prevent malicious privilege escalation.</p>
+<p><img src="/images/extra05.png" alt="Client Connection Info"></p>
+<p>In clients like Navicat/DBeaver, enter the corresponding username and password to connect to the user's data source.
+<img src="/images/extra04.png" alt="Client Connection Example"></p>
+<p><strong>A user's audit records remain consistent with those on the Yearning web page. Corresponding query work orders can be found and audited through the Approval -&gt; Query section.</strong></p>
 <div class="hint-container warning">
 <p class="hint-container-title">Warning</p>
 <ol>
-<li>每个用户有且仅有一个随机生成的C端登录查询密码，请勿泄露。</li>
-<li>C端查询仅在关闭查询审核时才生效</li>
-<li>C端查询无法在网页端中止查询</li>
-<li>客户端查询会产生许多其他的SQL语句执行(例如 自动设置utf8mb4，select databases()....)</li>
+<li>Each user has only one randomly generated client-side login query password. Please keep it confidential.</li>
+<li>Client-side queries are only effective when query auditing is disabled.</li>
+<li>Client-side queries cannot be stopped via the web interface.</li>
+<li>Client queries will generate various other SQL statements (e.g., automatic setting of utf8mb4, select databases(), etc.).</li>
 </ol>
 </div>
 </div></template>

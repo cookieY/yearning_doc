@@ -1,28 +1,30 @@
 ---
-title: 用户
+title: Users
 createTime: 2024/11/04 15:52:19
 permalink: /usage/cz6ua30z/
 ---
 
-## 创建用户
+## Creating Users
 
-创建用户有以下两种方式:
+Users can be created in the following two ways:
 
- + LDAP登录 当用户第一次通过LDAP登录并成功后Yearning将自动创建该用户数据。(在Yearning中LDAP用户的密码为随机密码，所以LDAP用户无法通过非LDAP登录的方式登录本系统)
- + 管理员在 管理 -> 用户 页面中手动创建
++ LDAP Login: When a user logs in through LDAP for the first time and succeeds, Yearning will automatically create user data for them. (In Yearning, the password for an LDAP user is randomly generated, so LDAP users cannot log in using non-LDAP methods.)
++ Admin creates users manually on the Management -> Users page.
 
-## 编辑用户
-![](/images/user01.png)
-点击编辑按钮可编辑改用户行数据,如下所示:
-![](/images/user02.png)
+## Editing Users
 
-重点名词释义:
+![Edit User](/images/user01.png)
 
-1.审计人  当用户为审计人角色时，将可查看审计页面下相关信息。
+Clicking the edit button allows you to edit the user's row data, as shown below:
 
-## 用户赋权
+![Edit User Details](/images/user02.png)
 
-![](/images/user03.png)
-点击权限按钮即可对该用户进行赋权。可以同时将多个权限组赋予用户，用户的权限将根据所赋予的1个或多个权限组权限计算并去重后获得。
-权限组权限配置请参考[权限组设置](/guide/config/group)。
+Key Terminology:
 
+1. Auditor: When a user has the auditor role, they will be able to view related information on the audit page.
+
+## Assigning Permissions to Users
+
+![Assign Permissions](/images/user03.png)
+
+Click the permissions button to assign permissions to the user. Multiple permission groups can be assigned to a user simultaneously, and the user's permissions will be calculated and deduplicated based on the one or more permission groups assigned. For permission group configuration, refer to [Permission Group Settings](/guide/config/group).

@@ -1,14 +1,13 @@
 ---
-title: 赞助
+title: Sponsorship
 createTime: 2024/11/04 16:24:35
 permalink: /about/w5jt71jw/
 ---
 
-Yearning 的发展离不开社区的力量。
+The development of Yearning owes much to the support of the community.
 
-赞助Yearning 使作者持续完善并开发新的功能
+Sponsoring Yearning enables the author to continuously improve and develop new features.
 
-## 赞助地址:
+## Sponsorship Address:
 
-![](https://wuchen-1252812685.cos.ap-shanghai.myqcloud.com/img/yearning/15640393327871.jpg)
-
+![Sponsorship QR Code](https://wuchen-1252812685.cos.ap-shanghai.myqcloud.com/img/yearning/15640393327871.jpg)

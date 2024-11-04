@@ -1,5 +1,5 @@
 ---
-title: 移动端审核
+title: Mobile
 createTime: 2024/11/04 16:34:50
 permalink: /about/euh91vwp/
 ---

@@ -1,93 +1,87 @@
 ---
-title: 快速上手
+title: Quick Start
 createTime: 2024/11/04 15:13:49
 permalink: /usage/tv2glbkw/
 ---
-# 使用准备
 
-**在正式使用Yearning前,你需要先设置如下setup(请务必花几分钟时间阅读!)。**
+**Before officially using Yearning, please set up the following (take a few minutes to read this!).**
 
-1. 创建用户 
-2. 创建权限组并将权限组赋予给对应的用户
-3. 创建审批流程
-4. 添加数据源信息
-5. 对数据源赋予审批流程
-6. 在设置页面配置各项配置信息
-7. 根据需求调整自定义审核规则
+1. Create Users
+2. Create Permission Groups and Assign Them to Corresponding Users
+3. Create Approval Processes
+4. Add Data Source Information
+5. Assign Approval Processes to Data Sources
+6. Configure Settings in the Settings Page
+7. Adjust Custom Audit Rules as Needed
 
-### 创建用户
+### Create Users
 
-在Yearning中用户可以通过以下方式创建:
+Users in Yearning can be created in the following ways:
 
-1. 在 **管理->用户** 页面admin用户自行创建用户。
-2. 打开 **管理->设置** 页面中的允许注册配置并保存。 由注册人自行点击yearning登录页面左上角注册按钮进行注册。
-3. 配置 **管理->设置** 页面中的Ldap的信息并保存。 ldap用户可在yearning登录页面中勾选ldap登录进行用户注册/登录操作。
-4. 基于config.toml配置的OIDC登陆方式进行用户登录操作。
-   
-::: tip
-   ldap配置中对于filter中的%s为占位符，类似于其他ldap系统中的%(user)s
-:::
-
-### 创建权限组并将权限组赋予给对应的用户
-
-通过**管理->权限组** 页面，admin可以创建/编辑/删除权限组。权限组提供了多种细粒度的权限管控(yearning目前权限管控仅下沉到数据源级别)如下所示:
-
-1. 允许DDL工单提交的数据源范围
-2. 允许DML工单提交的数据源范围
-3. 允许查询工单提交的数据源范围
-
-创建完权限组后请通过**管理->用户**页面，选择你需要赋予权限组的用户点击该用户对应的权限按钮进行权限组赋权。
-
-权限组设计理念可访问[权限设计](/guide/authority)
+1. Admin users can manually create users through the **Management->Users** page.
+2. Enable and save the registration option in the **Management->Settings** page. The user can then register by clicking the register button on the top left corner of the Yearning login page.
+3. Configure and save the Ldap information in the **Management->Settings** page. Ldap users can select Ldap login on the Yearning login page to register/login.
+4. User login can also be performed via OIDC login configured through `config.toml`.
 
 ::: tip
-一个用户可以被赋予多个权限组,多权限组下该用户会集成2个权限组的全部权限
-
-一个权限组也可以对多个用户进行赋权
+In Ldap configuration, the `%s` in the filter is a placeholder, similar to `%(user)s` in other Ldap systems.
 :::
 
+### Create Permission Groups and Assign Them to Corresponding Users
 
-### 添加数据源信息
+Admin can create/edit/delete permission groups through the **Management->Permission Groups** page. Permission groups offer various fine-grained permissions control (currently at data source level only), as shown below:
 
-通过**管理->数据库** 页面，admin可以创建/编辑/删除数据源。数据源为一个Mysql实例，数据库共分为读/写/读写三大种类。如果希望该数据源既可处理DDL/DML工单又能进行查询则该数据源应设置为读写，反之根据自己的需求可以设置为读/写。
+1. Range of data sources allowed for DDL submission
+2. Range of data sources allowed for DML submission
+3. Range of data sources allowed for query submission
+
+After creating the permission group, please go to the **Management->Users** page, select the user to whom you need to grant the permission group, and click the permission button corresponding to that user for authorization.
+
+To understand the philosophy behind permission groups, visit [Permission Design](/guide/authority).
+
+::: tip
+A user can be assigned multiple permission groups. In such a case, the user will inherit all permissions from both groups.
+
+A single permission group can be assigned to multiple users.
+:::
+
+### Add Data Source Information
+
+Admin can create/edit/delete data sources through the **Management->Databases** page. A data source is a MySQL instance, categorized into three types: read, write, and read-write. If you wish the data source to handle both DDL/DML submissions and queries, it should be set to read-write; otherwise, set it according to your needs.
 
 ::: warning
-Yearning不支持一些特殊字符串例如@，这是由于转义以及可能会带来的pt-osc执行错误而不得不规避的问题，建议用户单独创建一个新的mysql用户用来对接Yearning平台
+Yearning does not support certain special characters like `@`, due to potential issues with escaping and pt-osc execution errors. It is recommended to create a new MySQL user specifically for integration with the Yearning platform.
 :::
-### 为环境创建自定义审核规则
 
-通过**管理->流程** 页面，admin可以编辑环境的流程。
+### Create Custom Audit Rules for Environments
 
-Yearning以环境为单元，可对不同的环境配置不同的审核流程。
+Admin can edit the process of an environment through the **Management->Processes** page.
+
+Yearning uses environments as units, allowing different audit processes for different environments.
 
 ::: warning
+Ensure all orders in the environment are processed before changing the process to avoid confusion.
 
-更改流程时请确保该环境下的工单都已处理完毕，否则可能会引起流程错乱！
-
-如没有将对应环境配置流程则用户无法对这个环境进行任何DDL/DML工单提交操作
+If there is no process configuration for the environment, users cannot submit any DDL/DML orders for that environment.
 :::
 
-### 在设置页面配置各项配置信息
+### Configure Settings in the Settings Page
 
-通过**管理->设置** 页面，admin可以配置Yearning的多项配置。
+Admin can configure various settings of Yearning through the **Management->Settings** page.
 
-这里将介绍几个重点配置:
+Here are some key configurations:
 
-1. 查询limit上限: 该设置为 **全局查询** 最大的limit限制，默认为1000.这意味着通过Yearning进行的查询最多只会查询1000条，如需提高此阀值可直接修改这个配置。(DML/DDL的影响行数上限不受此规则限制，如需对DML/DDL影响行数上限进行修改请前往审核规则页面进行配置)
-2. 添加环境: 默认Yearning仅提供**aws/aliyun**两个环境，用户可自行添加或删除环境，添加完对应的环境后请及时前往流程模板页面添加该新环境的流程模板。
+1. Query Limit: This is the maximum limit for **global queries**, defaulting to 1000. This means queries through Yearning can return a maximum of 1000 rows. To increase this limit, modify this setting directly. (The limit for DML/DDL affected rows is not bound by this rule; modify this in the audit rules page.)
+2. Add Environment: By default, Yearning only provides **aws/aliyun** environments. Users can add or remove environments as needed. After adding an environment, promptly go to the process template page to add a template for that environment.
 
+### Adjust Custom Audit Rules as Needed
 
-### 根据需求调整自定义审核规则
-
-通过**管理->审核规则** 页面，admin可以设置Yearning多达几十项的审核规则且每一项审核规则都有详细的描述。
-
+Admin can configure numerous audit rules, each with detailed descriptions, through the **Management->Audit Rules** page.
 
 ::: tip
+In the Audit Rules, OSC Expr settings can utilize pt-osc/gh-ost for table migrations with DDL statements.
 
-审核规则中OSC Expr 设置项可对DDL语句使用pt-osc/gh-ost表迁移工具
+For PT-OSC settings, refer to the [official documentation](https://www.percona.com/doc/percona-toolkit/3.0/pt-online-schema-change.html).
 
-对于PT-OSC的设置请参考[官方文档](https://www.percona.com/doc/percona-toolkit/3.0/pt-online-schema-change.html)
-
-对于GH-OST的设置请参考[官方文档](https://github.com/github/gh-ost)
-
+For GH-OST settings, refer to the [official documentation](https://github.com/github/gh-ost).
 :::

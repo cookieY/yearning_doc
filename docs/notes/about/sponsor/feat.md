@@ -1,18 +1,23 @@
 ---
-title: 赞助版
+title: Sponsored Version
 createTime: 2024/11/04 16:32:18
 permalink: /about/d57hveaj/
 ---
-<p>赞助版基于最新的Yearning社区版本，目前已添加以下功能且不断更新:</p>
-<p>1.支持审核人移动端(手机)审核工单</p>
-<p>2.支持自定义消息推送</p>
-<p>3.支持外键审核</p>
-<p>4.支持指定表名前缀审核规则</p>
-<p>5.可基于主键生成回滚语句</p>
-<p>6.工单复制(适用于多环境工单流转)</p>
-<p>7.查询支持C端直连</p>
-<p>8.专属微信群,及时解决问题</p>
-<p>9.MFA 登录认证</p>
-<br>
-<h6>赞助版本将会持续更新差异化功能/支持更新</h6>
-<h6>年度赞助大于300可联系作者(Mail: henry@yearning.io)获取</h6>
+
+The sponsored version is based on the latest Yearning community version, and it has added the following features with ongoing updates:
+
+1. Mobile review for approvers (smartphone support for work order reviews)
+2. Custom message notifications
+3. Foreign key review support
+4. Audit rules based on specified table name prefixes
+5. Rollback statement generation based on primary keys
+6. Work order duplication (suitable for multi-environment work order transfers)
+7. Direct C-end connectivity for queries
+8. Exclusive WeChat group for prompt problem resolution
+9. MFA (Multi-Factor Authentication) login
+
+---
+
+### The sponsored version will continue to receive differentiated features and support updates.
+
+For annual sponsorships over 300, you can contact the author at (Mail: henry@yearning.io) to obtain the version.

@@ -1,5 +1,5 @@
-import comp from "/Users/henryyee/PersonalProjects/yearning_guide/docs/.vuepress/.temp/pages/usage/boccobus/index.html.vue"
-const data = JSON.parse("{\"path\":\"/usage/boccobus/\",\"title\":\"OIDC登录配置\",\"lang\":\"en-US\",\"frontmatter\":{\"title\":\"OIDC登录配置\",\"createTime\":\"2024/11/04 15:54:04\",\"permalink\":\"/usage/boccobus/\"},\"headers\":[],\"readingTime\":{\"minutes\":0.25,\"words\":74},\"filePathRelative\":\"notes/usage/configure/oidc.md\",\"bulletin\":false}")
+import comp from "/root/guide/docs/.vuepress/.temp/pages/usage/boccobus/index.html.vue"
+const data = JSON.parse("{\"path\":\"/usage/boccobus/\",\"title\":\"OIDC Login Configuration\",\"lang\":\"en-US\",\"frontmatter\":{\"title\":\"OIDC Login Configuration\",\"createTime\":\"2024/11/04 15:54:04\",\"permalink\":\"/usage/boccobus/\"},\"headers\":[],\"readingTime\":{\"minutes\":0.21,\"words\":64},\"filePathRelative\":\"notes/usage/configure/oidc.md\",\"bulletin\":false}")
 export { comp, data }
 
 if (import.meta.webpackHot) {

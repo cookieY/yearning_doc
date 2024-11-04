@@ -1,37 +1,36 @@
 ---
-title: 安装
+title: Installation
 createTime: 2024/11/04 14:39:28
 permalink: /usage/ixah25xr/
 ---
-# 安装
 
-Yearning 不依赖于任何第三方 SQL 审核工具作为审核引擎,内部已自己实现审核/回滚相关逻辑。
+Yearning does not rely on any third-party SQL auditing tools as its auditing engine; it has internally implemented audit/rollback-related logic.
 
-**仅依赖 Mysql 数据库。**
+**Only depends on the MySQL database.**
 
-mysql 版本必须为**5.7**及以上版本(8.0及以上请将sql_mode 设置为空)并已事先自行安装完毕且**创建 Yearning 库**,字符集应为**UTF8mb4**(仅 Yearning 所需 mysql 版本)
+The MySQL version must be **5.7** or above (for 8.0 and above, set `sql_mode` to empty) and should be pre-installed with the **Yearning database created**, with the character set set to **UTF8mb4** (only required for the MySQL version Yearning needs).
 
-Yearning 基于 1080p 分辨率开发**仅支持 1080p 及以上显示器访问**
+Yearning is developed based on a 1080p resolution and **only supports access from 1080p and above displays**.
 
-对于设置页面配置重叠的问题请确认自己的分辨率以及是否进行了放大操作
+For overlapping issues on the settings page, please confirm your resolution and check for any zoom operations.
 
-请使用Chrome最新版本(不包括 360 等其他魔改版本)
+Please use the latest version of Chrome (excluding other modified versions like 360).
 
-# Yearning 下载
+# Yearning Download
 
-Yearning-go 提供二进制下载包
+Yearning-go provides a binary download package.
 
-下载地址 [https://github.com/cookieY/Yearning/releases](https://github.com/cookieY/Yearning/releases)
+Download link: [https://github.com/cookieY/Yearning/releases](https://github.com/cookieY/Yearning/releases)
 
-**请选择最新版本 在 Assets 中选择 Yearning-x.x.x.linux-amd64.zip 包进行下载**
+**Please select the latest version and download the Yearning-x.x.x.linux-amd64.zip package from the Assets section.**
 
-**如需进行代码修改或自己编译请移步至[二次开发页面]()**
+**If you wish to modify the code or compile it yourself, please visit the [Secondary Development Page]().**
 
-# Yearning 目录结构
+# Yearning Directory Structure
 
-![](https://wuchen-1252812685.cos.ap-shanghai.myqcloud.com/img/yearning/20210301141132.png)
+![Yearning Directory Structure](https://wuchen-1252812685.cos.ap-shanghai.myqcloud.com/img/yearning/20210301141132.png)
 
-## 1.填写配置文件
+## 1. Fill in the Configuration File
 
 ```shell
 cat conf.toml
@@ -42,69 +41,66 @@ Port = "3306"
 Password = "xxxx"
 User = "root"
 
-[General]   #数据库加解密key，只可更改一次。
+[General]   # Database encryption/decryption key, can only be changed once.
 SecretKey = "dbcjqheupqjsuwsm"
-LogLevel = "debug"  # debug,info,warn,error   选择日志显示等级
-Lang = "en_US"  # en_US,zh_CN  选择Yearning使用语言
+LogLevel = "debug"  # Options: debug, info, warn, error - Choose the log display level
+Lang = "en_US"  # Options: en_US, zh_CN - Choose the language for Yearning
 ```
 
-### 关于 SecretKey
+### About SecretKey
 
-SecretKey 是 token/数据库密码加密/解密的 salt。
+The SecretKey is used as a salt for token/database password encryption/decryption.
 
-建议所有用户在初次安装 Yearning 之前将 SecretKey 更改(不更改将存在安全风险)
+It is recommended to change the SecretKey before initially installing Yearning (failing to change it may pose a security risk).
 
-**格式: 大小写字母均可, 长度必须为 16 位 如长度不是16位将会导致无法新建数据源** 
+**Format: Both uppercase and lowercase letters are allowed, and the length must be 16 characters. If the length is not 16 characters, it will result in the inability to create new data sources.**
 
-**特别注意:**
+**Important Note:**
 
-**此 key 仅可在初次安装时更改!之后不可再次更改!如再次更改会导致之前已存放的数据源密码无法解密,最终导致无法获取相关数据源信息**
+**This key can only be changed during the initial installation! It cannot be changed afterward! Changing it later will cause the existing data source passwords to be undecryptable, ultimately leading to the inability to access related data source information.**
 
-## 使用帮助
+## Usage Help
 
 ```shell
 ./Yearning --help
 ```
 
-![](https://wuchen-1252812685.cos.ap-shanghai.myqcloud.com/img/yearning/20210301141137.jpg)
+![Yearning Help](https://wuchen-1252812685.cos.ap-shanghai.myqcloud.com/img/yearning/20210301141137.jpg)
 
-## 2.初始化及安装
+## 2. Initialization and Installation
 
 ```shell
 ./Yearning install
 ```
 
-**如要再次安装，请先把 yearning 库下所有表删除，否则重复执行无效**
+**If you need to reinstall, please delete all tables under the yearning database first; otherwise, repeated execution is ineffective.**
 
-## 3.启动服务
-
-> 
+## 3. Start the Service
 
 ```shell
-默认启动
+Default start
 ./Yearning run
-参数启动
+Start with parameters
 ./Yearning run --push "172.27.80.35" --port "8000"
 ```
 
 ::: warning
-请注意:
+Please Note:
 
-由于Yearning中个别功能使用websocket进行通信。如采用反向代理的方式访问Yearning请在代理层对websocket协议进行代理支持。
+Due to the use of WebSocket communication in some functions in Yearning, if accessing Yearning through reverse proxy, please ensure WebSocket protocol support at the proxy layer.
 
-例如: nginx 需要配置 proxy_http_version 1.1; proxy_set_header Upgrade $http_upgrade; proxy_set_header Connection "upgrade";
+For example: For NGINX, configure `proxy_http_version 1.1`; `proxy_set_header Upgrade $http_upgrade`; `proxy_set_header Connection "upgrade";`
 
 :::
 
 ```
 
-打开浏览器 http://127.0.0.1:8000
+Open a browser and go to http://127.0.0.1:8000
 
-默认账号/密码：admin/Yearning_admin
+Default username/password: admin/Yearning_admin
 
-欢迎来到Yearning
+Welcome to Yearning
 
 ```
 
-![](/images/dash01.png)
-
+![Yearning Dashboard](/images/dash01.png)

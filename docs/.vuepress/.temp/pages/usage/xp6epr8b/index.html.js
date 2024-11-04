@@ -1,5 +1,5 @@
-import comp from "/Users/henryyee/PersonalProjects/yearning_guide/docs/.vuepress/.temp/pages/usage/xp6epr8b/index.html.vue"
-const data = JSON.parse("{\"path\":\"/usage/xp6epr8b/\",\"title\":\"LDAP配置\",\"lang\":\"en-US\",\"frontmatter\":{\"title\":\"LDAP配置\",\"createTime\":\"2024/11/04 15:54:19\",\"permalink\":\"/usage/xp6epr8b/\"},\"headers\":[{\"level\":2,\"title\":\"LDAP用户属性映射\",\"slug\":\"ldap用户属性映射\",\"link\":\"#ldap用户属性映射\",\"children\":[]}],\"readingTime\":{\"minutes\":0.99,\"words\":298},\"filePathRelative\":\"notes/usage/configure/ldap.md\",\"bulletin\":false}")
+import comp from "/root/guide/docs/.vuepress/.temp/pages/usage/xp6epr8b/index.html.vue"
+const data = JSON.parse("{\"path\":\"/usage/xp6epr8b/\",\"title\":\"LDAP Configuration\",\"lang\":\"en-US\",\"frontmatter\":{\"title\":\"LDAP Configuration\",\"createTime\":\"2024/11/04 15:54:19\",\"permalink\":\"/usage/xp6epr8b/\"},\"headers\":[{\"level\":2,\"title\":\"LDAP User Attribute Mapping\",\"slug\":\"ldap-user-attribute-mapping\",\"link\":\"#ldap-user-attribute-mapping\",\"children\":[]}],\"readingTime\":{\"minutes\":0.72,\"words\":216},\"filePathRelative\":\"notes/usage/configure/ldap.md\",\"bulletin\":false}")
 export { comp, data }
 
 if (import.meta.webpackHot) {

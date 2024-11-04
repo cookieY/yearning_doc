@@ -6,15 +6,196 @@ const enGetStartedNote = defineNoteConfig({
   dir: 'usage',
   link: '/usage/',
   sidebar: [
-    'Installation',
-    'Getting Started',
+    {
+      text: 'What is Yearning?',
+      link: '/usage/ptbzchak/',
+    },
+    {
+      text: 'Deployment',
+      icon: 'entypo:light-bulb',
+      items: [
+        {
+          text: 'Manual Deployment',
+          link: '/usage/ixah25xr/',
+        },
+        {
+          text: 'Docker',
+          link: '/usage/lphvwwj3/',
+        },
+        {
+          text: 'kubenertes',
+          link: '/usage/hf1nqbio/',
+        },
+        {
+          text: 'How to update?',
+          link: '/usage/q8mdejgq/',
+        },
+      ]
+    },
+    {
+      text: 'Configuration',
+      icon: 'icon-park-outline:config',
+      items: [
+        {
+          text: 'Quick Start',
+          link: '/usage/tv2glbkw/',
+        },
+        {
+          text: 'RBAC',
+          link: '/usage/ms7zdn29/',
+          items: [
+            {
+              text: 'Permission Group',
+              link: '/usage/r9ztsdkl/',
+            },
+          ]
+        },
+        {
+          text: 'Source',
+          link: '/usage/ocdsdf1t/',
+        },
+        {
+          text: 'Users',
+          link: '/usage/cz6ua30z/',
+        },
+        {
+          text: 'Flow',
+          link: '/usage/6vo8fvzk/',
+        },
+        {
+          text: 'PT-OSC/GH-OST',
+          link: '/usage/cgd82cua/',
+        },
+        {
+          text: 'Login Authentication',
+          items: [
+            {
+              text: 'OIDC',
+              link: '/usage/boccobus/',
+            },
+            {
+              text: 'LDAP/AD',
+              link: '/usage/xp6epr8b/',
+            }
+          ]
+        },
+      ]
+    },
+    {
+      text: 'How to use',
+      icon: 'icon-park-outline:data-user',
+      items: [
+        {
+          text: 'SQL Order',
+          items: [
+            {
+              text: 'Submit',
+              link: '/usage/oa6oxmp4/',
+            },
+            {
+              text: 'Audit',
+              link: '/usage/76kpl0j9/',
+            }
+          ]
+        },
+        {
+          text: 'Query Order',
+          items: [
+            {
+              text: 'Submit',
+              link: '/usage/zz18pjdz/',
+            },
+            {
+              text: 'Audit',
+              link: '/usage/saofd1yf/',
+            }
+          ]
+        },
+        {
+          text: 'Auditing',
+          link: '/usage/d7l2yt9g/',
+        }
+      ]
+    }
   ],
 })
+
+const usAboutNote = defineNoteConfig({
+  dir: 'about',
+  link: '/about/',
+  sidebar: [
+    {
+      text: 'About Yearning',
+      link: '/about/rtm9eg85/',
+    },
+    {
+      text: 'Sponsoer Version',
+      items: [
+        {
+          text: 'How to Sponsor Yearning?',
+          link: '/about/w5jt71jw/',
+        },
+        {
+          text: 'Sponsoer Version Feature',
+          link: '/about/d57hveaj/',
+        },
+        {
+          text: 'Mobile Audit Feature',
+          link: '/about/euh91vwp/',
+        },
+        {
+          text: 'Client Query',
+          link: '/about/qtes3mwi/',
+        },
+      ]
+    }
+  ],
+})
+
+const usDevelopmentNote = defineNoteConfig({
+  dir: 'development',
+  link: '/development/',
+  sidebar: [
+    {
+      text: 'License',
+      icon: 'fluent-mdl2:permissions',
+      items:[
+        {
+          text: 'Announcement',
+          link: '/development/u13ykizb/',
+        }
+      ],
+    },
+    {
+      text: 'Development Guide',
+      icon: 'icon-park-outline:code',
+      items: [
+        {
+          text: 'API',
+          link: '/development/5ns3pe40/',
+        },
+        {
+          text: 'Backend Directory Structure',
+          link: '/development/4mvjiei9/',
+        },
+        {
+          text: 'Frontend Directory Structure',
+          link: '/development/jr4p9oiu/',
+        },
+        {
+          text: 'Juno Invocation',
+          link: '/development/16e5vp2y/',
+        },
+      ]
+    }
+  ],
+})
+
 
 export const enNotes = defineNotesConfig({
   dir: 'notes',
   link: '/',
-  notes: [enGetStartedNote],
+  notes: [enGetStartedNote,usAboutNote,usDevelopmentNote],
 })
 
 /* =================== locale: zh-CN ======================= */
@@ -59,7 +240,13 @@ const zhGetStartedNote = defineNoteConfig({
         },
         {
           text: 'RBAC',
-          link: '/zh/usage/ms7zdn29/',
+          link: '/usage/ms7zdn29/',
+          items: [
+            {
+              text: 'Permission Group',
+              link: '/usage/r9ztsdkl/',
+            },
+          ]
         },
         {
           text: '数据源',

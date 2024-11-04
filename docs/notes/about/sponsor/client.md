@@ -1,29 +1,27 @@
 ---
-title: Client端查询
+title: Client-Side Query
 createTime: 2024/11/04 16:34:41
 permalink: /about/qtes3mwi/
 ---
-赞助版实现了基于mysql协议的查询子程序，用户可通过不同的MysqlClient客户端来查询数据，实现原生功能。
 
-同时C端查询依然支持网页端查询审计,非Query语句拦截,结果脱敏等功能。
+The sponsored version implements a query subprogram based on the MySQL protocol, allowing users to query data through various MySQLClient clients, enabling native functionality.
 
-用户点击个人设置查看客户端连接信息,通过不同的连接用户名可连接不同的数据源(该数据源为该用户的Query数据源权限)。
+Additionally, client-side queries still support web-based query auditing, interception of non-query statements, and result desensitization.
 
-连接用户由 用户名@数据源ID组成，单Yearning用户的所有C端查询用户共用一个查询密码。
+Users can view client connection information by clicking on personal settings and connect to different data sources (those for which the user has query permissions) using different connection usernames. The connection username is composed of the username@DataSourceID. All client-side query users of a single Yearning user share one query password.
 
-登录时会检查用户是否存在相关数据源权限,规避恶意提权问题。
+Upon login, the system checks whether the user has relevant data source permissions to prevent malicious privilege escalation.
 
-![](/images/extra05.png)
+![Client Connection Info](/images/extra05.png)
 
-在 navicat/DBeaver 等客户端中输入对应用户名,密码即可连接到该用户的数据源。
-![](/images/extra04.png)
+In clients like Navicat/DBeaver, enter the corresponding username and password to connect to the user's data source.
+![Client Connection Example](/images/extra04.png)
 
-**用户的审计记录与在Yearning 网页端一致。可通过审核--查询找到对应查询工单进行审计**
+**A user's audit records remain consistent with those on the Yearning web page. Corresponding query work orders can be found and audited through the Approval -> Query section.**
 
 ::: warning
-1. 每个用户有且仅有一个随机生成的C端登录查询密码，请勿泄露。
-2. C端查询仅在关闭查询审核时才生效
-3. C端查询无法在网页端中止查询
-4. 客户端查询会产生许多其他的SQL语句执行(例如 自动设置utf8mb4，select databases()....)
-
+1. Each user has only one randomly generated client-side login query password. Please keep it confidential.
+2. Client-side queries are only effective when query auditing is disabled.
+3. Client-side queries cannot be stopped via the web interface.
+4. Client queries will generate various other SQL statements (e.g., automatic setting of utf8mb4, select databases(), etc.).
 :::

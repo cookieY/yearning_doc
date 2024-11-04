@@ -1,30 +1,31 @@
 ---
-title: 如何更新？
+title: How to update?
 createTime: 2024/11/04 16:20:19
 permalink: /usage/q8mdejgq/
 ---
 
-Yearning采用自动表结构同步 无需手动更新表结构。只需**停止原服务并替换安装包后重新启动**即可
+Yearning employs automatic table structure synchronization, eliminating the need for manual table structure updates. Simply **stop the original service, replace the installation package, and restart**.
 
-> 在一些特殊的升级情况中(破坏性变更)需要手动进行数据同步操作.如在版本更新公告中并无提示破坏性升级则无视以下命令!
+> In some special upgrade situations (destructive changes), manual data synchronization may be required. If there is no destructive upgrade indicated in the version upgrade announcement, you can ignore the following command!
 
 ```shell
 ./Yearning migrate
 ```
 
 ::: warning
-#### 2.3.5版本更新至3.0.0
+#### Updating from Version 2.3.5 to 3.0.0
 
-**当前RC版本仅支持2.3.5版本更新迁移**
+**The current version only supports updates from version 2.3.5**
 
-1.备份原Yearning数据库
+1. Back up the original Yearning database.
 
-2.执行Yearning目录下 **./migrate** 二进制文件。请注意 必须在**Yearning**启动之前执行！！
+2. Execute the **./migrate** binary file in the Yearning directory. Note that this must be executed **before Yearning starts!**
 
-3.正常启动Yearning
+3. Start Yearning normally.
 :::
 
 ::: danger
-由于在一些新版本中会增加一些新的变更，请在更新后关闭Yearning页面重新登录后进行使用。
-由于流程,排除数据库,脱敏逻辑更改为基于数据源，请在更新后在数据源处修改配置。
+Due to the addition of new changes in some newer versions, please close the Yearning page and log in again after updating to use smoothly.
+
+Since processes, database exclusion, and desensitization logic have been changed to be based on data sources, please update the configurations at the data source after updating.
 :::

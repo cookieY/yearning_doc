@@ -1,67 +1,65 @@
 ---
-title: 查询提交
+title: Submission
 createTime: 2024/11/04 16:42:50
 permalink: /usage/zz18pjdz/
 ---
 
-点击工单申请页面，选择Query类进行查询。
+Click on the work order application page and select the Query category for submission.
 
-![](/images/query01.png)
+![Query Submission](/images/query01.png)
 
-如开启查询审核功能将进入如下界面：
+If the query review feature is enabled, you will access the following interface:
 
-![](/images/query02.png)
-
-::: tip
-
-+ 查询审核开启后需要在查询前提交查询申请经由数据源负责人审批通过后方可查询，且同一时间只能申请一个数据源进行查询操作(可申请的数据源为用户其所拥有的query权限数据源)。
-+ 如开启查询审核需要在申请时注明是否导出(且系统已开启查询导出功能)。
-+ 如查询审核功能未开启则系统开启查询导出功能后所有人员均可导出数据
-+ 未开启查询审核功能，用户仅可对其拥有query权限的数据源进行查询
-+ 由于查询采用websocket连接，如使用反向代理(nginx)请确保对websocket代理的正确配置
-:::
-
-
-## 查询界面
-
-![](/images/query03.png)
-
-查询功能:
-+ 库/表搜索
-+ 查询历史记录 一键复制
-+ 多窗口查询
-+ 支持多SQL语句同时执行并显示结果
-+ 表名右键可查看该表数据信息
-+ 如开启数据导出功能则可在SQL执行完毕后导出相应结果
+![Query Review Interface](/images/query02.png)
 
 ::: tip
-+ 当焦点处于编辑器中时，可以采用Ctrl/Cmd + E 快捷键触发SQL查询
-+ 当焦点处于编辑器中时，可以采用Ctrl/Cmd + B 快捷键触发SQL美化
-+ 同时该编辑器支持常用文本快捷键
+
++ When query review is enabled, you must submit a query request and get approval from the data source owner before performing queries. Only one data source can be queried at a time (queryable data sources are those for which the user has query permissions).
++ If query review is enabled, you must indicate if you wish to export the data during application (and the system's query export feature must be enabled).
++ If query review is not enabled, anyone can export data after the query export feature is enabled.
++ If query review is not enabled, a user can only query data sources for which they have query permissions.
++ Since queries use WebSocket connections, if using reverse proxy (like nginx), ensure correct configuration for WebSocket support.
 :::
 
+## Query Interface
 
-## 剪贴板功能
+![Query Interface](/images/query03.png)
 
-![](/images/query04.png)
+Query Features:
++ Database/Table Search
++ Query History with One-click Copy
++ Multi-window Query
++ Support for executing multiple SQL statements simultaneously and displaying results
++ Right-click on table names to view table data information
++ If data export is enabled, you can export corresponding results after SQL execution
 
-剪贴板功能mac上的Paste小工具，点击新建剪贴板后在弹出框内填写名称及需要保存的内容，保存后通过alt(option) && ctrl(command) + v 组合键调出剪贴板使用
+::: tip
++ When focused on the editor, use Ctrl/Cmd + E to trigger SQL query execution.
++ When focused on the editor, use Ctrl/Cmd + B to beautify SQL statements.
++ The editor supports common text shortcuts.
+:::
 
-![](/images/query05.png)
+## Clipboard Feature
 
-点击**复制**图标即可一键复制
+![Clipboard Feature](/images/query04.png)
 
-## 历史记录功能
+The Clipboard feature is similar to the Paste utility on Mac. Click to create a new clipboard, fill in the name and content in the pop-up window, and save. Use the Alt (Option) && Ctrl (Command) + V shortcut to access the clipboard.
+
+![Clipboard Use](/images/query05.png)
+
+Click the **Copy** icon to copy instantly.
+
+## History Feature
 
 <img src="/images/query06.png" style="width: 350px">
 
-所有执行成功的SQL语句都会保存在该历史记录中方便随时复制调用
+All successfully executed SQL statements are saved in the history for easy copying and reuse at any time.
 
 ::: tip
-总体看来历史记录与剪贴板功能有许多相似之处，但它们的使用场景并不相同
+The History and Clipboard features appear similar, but they serve different use cases:
 
-+ 历史记录 在当前查询窗口期内快速查找到已执行的SQL语句重复执行
-+ 剪贴板 将常用的语句保存随时都可复制执行
++ History: Quickly find and re-execute SQL statements during the current query session.
++ Clipboard: Save frequently used statements for copying and execution at any time.
 
-注意: 无论是剪贴板还是历史记录，数据均保存在用户浏览器本地。如开启无痕浏览模式将无法使用该功能，同时如对浏览器数据进行清理则之前的数据也会一并清空。
+Note: Both the clipboard and history data are stored locally in the user's browser. If using incognito mode, these features won't be available, and clearing browser data will also erase previous data.
 :::

@@ -20,7 +20,6 @@
 <h2 id="注意事项" tabindex="-1"><a class="header-anchor" href="#注意事项"><span>注意事项</span></a></h2>
 <p>Yearning后端及前端代码基于AGPL3.0(审核引擎项目Juno代码不在开放范围,严禁商业使用)</p>
 <p><strong>开源版本已实现net/rpc调用，可执行可编译运行。</strong></p>
-<p><strong>不建议初学者尝试二次开发或当做学习项目</strong></p>
 </div></template>
 
 

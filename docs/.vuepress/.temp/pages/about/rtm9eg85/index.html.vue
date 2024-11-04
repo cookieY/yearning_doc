@@ -1,13 +1,13 @@
-<template><div><p>Yearning是一款可满足大部分公司SQL审核需求的web端可视化SQL审核平台。在实现常规的sql审核功能外还添加了诸如数据查询等一系列便捷的功能。</p>
-<p>如有相关的功能建议 及 bug 欢迎issues及电邮</p>
-<p>联系方式：
-电邮：henry@yearning.io</p>
-<p>Yearning 使用交流QQ群 1群: 747364310(已满) 2群:363323798</p>
-<p>Author： Henry.Yee</p>
-<p>开源5年来得到了很多小伙伴的认可，同时Yearning也存在许多的不足。希望大家能继续支持Yearning，感谢一路以来支持并理解的小伙伴们。💥💥💥</p>
-<h2 id="免责声明" tabindex="-1"><a class="header-anchor" href="#免责声明"><span>免责声明</span></a></h2>
-<p>由Yearning以及其他第三方二次开发所产生的一切后果,Yearning作者本人不负一切责任!</p>
-<p><strong>请在进行安全评估及测试体验后使用。</strong></p>
+<template><div><p>Yearning is a web-based visual SQL auditing platform that meets the SQL auditing needs of most companies. Besides conventional SQL auditing functionalities, it also offers a range of convenient features like data querying.</p>
+<p>If you have feature suggestions or encounter bugs, feel free to reach out through issues or email.</p>
+<p>Contact Information:
+Email: henry@yearning.io</p>
+<p>Yearning User Exchange QQ Groups: Group 1: 747364310 (Full), Group 2: 363323798</p>
+<p>Author: Henry.Yee</p>
+<p>Yearning has gained recognition from many users over its five years of open-source availability. While there are still areas for improvement, your continued support and understanding are greatly appreciated. Thank you to everyone who has been with Yearning on this journey. 💥💥💥</p>
+<h2 id="disclaimer" tabindex="-1"><a class="header-anchor" href="#disclaimer"><span>Disclaimer</span></a></h2>
+<p>The author of Yearning assumes no responsibility for any consequences resulting from the use of Yearning or any third-party developments.</p>
+<p><strong>Please ensure it is used only after thorough security evaluation and testing.</strong></p>
 </div></template>
 
 

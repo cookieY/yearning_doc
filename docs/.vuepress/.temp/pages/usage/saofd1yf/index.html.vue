@@ -1,8 +1,8 @@
-<template><div><p><img src="/images/query07.png" alt=""></p>
-<p>数据源负责人通过 审核 -&gt; 查询 页面查看需要审核的查询工单(未开启查询审核时工单将自动批准)</p>
-<h2 id="查询详情" tabindex="-1"><a class="header-anchor" href="#查询详情"><span>查询详情</span></a></h2>
-<p><img src="/images/query08.png" alt=""></p>
-<p>点击对应查询工单详情按钮后进入，可查看该工单的基本信息以及执行的SQL语句。</p>
+<template><div><p><img src="/images/query07.png" alt="Query Review"></p>
+<p>Data source owners can view query work orders that need approval via the Approval -&gt; Query page (if query approval is not enabled, work orders will be automatically approved).</p>
+<h2 id="query-details" tabindex="-1"><a class="header-anchor" href="#query-details"><span>Query Details</span></a></h2>
+<p><img src="/images/query08.png" alt="Query Details"></p>
+<p>Click the detail button of the corresponding query work order to view the work order's basic information and the executed SQL statements.</p>
 </div></template>
 
 

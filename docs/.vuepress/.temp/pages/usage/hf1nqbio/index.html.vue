@@ -1,4 +1,5 @@
-<template><div><p>k8s部署<a href="https://zhuanlan.zhihu.com/p/408504679" target="_blank" rel="noopener noreferrer">来自知乎</a> 以下为适配3.0版本的部署方式。</p>
+<template><div><p>Kubernetes Deployment (Adapted for Version 3.0) <a href="https://zhuanlan.zhihu.com/p/408504679" target="_blank" rel="noopener noreferrer">Source: Zhihu</a></p>
+<p>Below is the deployment method adapted for version 3.0.</p>
 <h4 id="secret" tabindex="-1"><a class="header-anchor" href="#secret"><span>Secret</span></a></h4>
 <div class="language-yml line-numbers-mode" data-ext="yml" data-title="yml"><button class="copy" title="Copy code" data-copied="Copied"></button><pre class="shiki shiki-themes vitesse-light vitesse-dark vp-code" v-pre=""><code><span class="line"><span style="--shiki-light:#998418;--shiki-dark:#B8A965">apiVersion</span><span style="--shiki-light:#999999;--shiki-dark:#666666">:</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D"> v1</span></span>
 <span class="line"><span style="--shiki-light:#998418;--shiki-dark:#B8A965">kind</span><span style="--shiki-light:#999999;--shiki-dark:#666666">:</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D"> Secret</span></span>

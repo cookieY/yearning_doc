@@ -1,34 +1,34 @@
 ---
-title: 数据源
+title: Data Sources
 createTime: 2024/11/04 15:51:57
 permalink: /usage/ocdsdf1t/
 ---
 
-## 创建数据源
+## Creating Data Sources
 
 <br>
 <img src="/images/db.png" style="width:350px">
 
-重点名词释义:
-+ 流程 赋予该新建数据源已有的审核流程(非查询)
-+ 负责人 该用户为数据源实际负责人，且当查询审核开启后由该负责人负责该数据源的查询审批
-+ 类型 当前类型共分三种:1.读写(既可以被查询也可以被执行),2.写(仅执行),3.读(仅查询)
+Key Terminologies:
++ Process: Assign an existing approval process (non-query) to the newly created data source.
++ Owner: The user responsible for the data source, and once query approval is enabled, this person oversees the data source's query approvals.
++ Type: Currently divided into three types: 1. Read-Write (can be queried and executed), 2. Write (execution only), 3. Read (query only).
 
 ::: tip
-类型的不同将会导致该数据源出现在权限组内不同类型赋权的穿梭框中。详情请参考[权限组设置](/guide/config/group)
+The different types will determine how the data source appears in the shuttle box for different authorization types within a permission group. For details, refer to [Permission Group Settings](/guide/config/group).
 :::
 
-## 编辑数据源
+## Editing Data Sources
 
-![](/images/flowtarget.png)
+![Edit Data Sources](/images/flowtarget.png)
 
-重点名词释义:
-+ 排除数据库 选择需要排除的数据库并保存后，该数据库将不会出现在提交工单/查询页面的数据库选择下拉框中。
-+ 脱敏字段  输入脱敏字段后该数据源下匹配的该字段数据(大小写敏感)将不会显示在查询结果中。
+Key Terminologies:
++ Exclude Databases: Select and save databases that need to be excluded so that they do not appear in the database selection dropdown on the submission order/query page.
++ Masking Fields: When masking fields are entered, the matched field data (case-sensitive) under this data source will not be displayed in the query results.
 
 ::: warning
-当点击数据源编辑按钮后出现以下警告通知:
-![](/images/cannot.png)
+If the following warning notification appears after clicking the data source edit button:
+![Warning Notification](/images/cannot.png)
 
-该信息说明数据源配置信息有误，无法连接到该数据库。
+This indicates that there is a configuration issue with the data source, and it cannot connect to the database.
 :::

@@ -1,13 +1,14 @@
 ---
-title: 审计
+title: Auditing
 createTime: 2024/11/04 16:46:43
 permalink: /usage/d7l2yt9g/
 ---
-审计功能为具有**审计人**角色的用户提供平台工单/查询数据的审计支持。
 
-### 如何使用审计功能
+The auditing feature provides users with the **Auditor** role with support for auditing platform work orders and query data.
 
-1. 赋予审计用户审计人角色(用户页面)
-2. 审计用户重新登录后即可在导航栏处看到审计栏
+### How to Use the Auditing Feature
 
-![](/images/comptroller.png)
+1. Assign the Auditor role to the auditing user (on the user page).
+2. Once the auditing user logs back in, they will see the Auditing section in the navigation bar.
+
+![Auditing Section](/images/comptroller.png)

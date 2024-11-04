@@ -1,4 +1,4 @@
-import comp from "/Users/henryyee/PersonalProjects/yearning_guide/docs/.vuepress/.temp/pages/zh/blog/index.html.vue"
+import comp from "/root/guide/docs/.vuepress/.temp/pages/zh/blog/index.html.vue"
 const data = JSON.parse("{\"path\":\"/zh/blog/\",\"title\":\"博客\",\"lang\":\"zh-CN\",\"frontmatter\":{\"lang\":\"zh-CN\",\"title\":\"博客\",\"draft\":true},\"headers\":[],\"readingTime\":{\"minutes\":0,\"words\":0},\"filePathRelative\":null,\"type\":\"blog\",\"bulletin\":false}")
 export { comp, data }
 

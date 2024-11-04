@@ -4,41 +4,38 @@ createTime: 2024/11/04 15:54:38
 permalink: /usage/cgd82cua/
 ---
 
-
 ::: warning
-关于OSCExpr审核规则的注意事项：
+Regarding OSCExpr audit rule considerations:
 
-在3.0.0版本之前的Yearning版本中，通过强制pt-osc的参数名来统一pt-osc执行指令。这给用户带来了不小的麻烦:
-1. 无法扩展参数
-2. 无法正确了解Yearning中的参数与pt-osc的关联性
-3. 无法使用除pt-osc的其他迁移工具
+In versions of Yearning prior to 3.0.0, pt-osc execution instructions were standardized through forced pt-osc parameter names. This created several issues:
+
+1. The inability to extend parameters
+2. Difficulty in understanding the relationship between parameters in Yearning and pt-osc
+3. Lack of support for migration tools other than pt-osc
 :::
 
-基于以上原因，在Yearning3.0.0中增加了OSCExpr参数，并废除了pt-osc相关的参数规则。
+Due to the above reasons, Yearning 3.0.0 introduces the OSCExpr parameter, replacing the previous pt-osc parameter rules.
 
-通过增加通用变量的方式来尽可能的满足所有场景下的DDL迁移工具需求。
-
-增加通用变量如下：
-```shell
-
-1.  $SQL   对应执行工单SQL语句  
-2.  $ADDR   对应执行工单数据源地址
-3.  $PORT  对应执行工单数据源端口
-4.  $USER    对应执行工单数据源用户
-5.  $PASSWORD   对应执行工单数据源密码
-6.  $SCHEMA   对应执行工单库名  
-7.  $TABLE  对应执行工单表名
-````
-
-变更后如需在DDL语句中调用pt-osc指令则可以使用如下写法填写:
+By introducing general variables, the aim is to cater to all scenarios for DDL migration tool requirements. The added general variables are as follows:
 
 ```shell
-pt-online-schema-change --alter $SQL --user=$USER --password=$PASSWORD --host=$ADDR P=$PORT,D=$SCHEMA,t=$TABLE --execute
+1.  $SQL       Corresponds to the execution order's SQL statement  
+2.  $ADDR      Corresponds to the execution order's data source address
+3.  $PORT      Corresponds to the execution order's data source port
+4.  $USER      Corresponds to the execution order's data source user
+5.  $PASSWORD  Corresponds to the execution order's data source password
+6.  $SCHEMA    Corresponds to the execution order's database name  
+7.  $TABLE     Corresponds to the execution order's table name
 ```
 
-系统将自动把对应工单的相关数据填充到所关联的变量中，无需用户手动操作。
+After the changes, if you need to invoke pt-osc commands in DDL statements, you can write it as follows:
 
-如需使用其他迁移工具，只需要将相关通用变量填入对应的指令中即可(如 gh-ost)。
+```shell
+pt-online-schema-change --alter $SQL --user=$USER --password=$PASSWORD --host=$ADDR --port=$PORT,D=$SCHEMA,t=$TABLE --execute
+```
 
-**执行结果请在执行工单的工单详情处点击osc进度tab页进行查看**
+The system will automatically populate the related data from the corresponding order into the associated variables, eliminating the need for manual input.
 
+If you wish to use other migration tools, you simply need to substitute the relevant general variables into the appropriate command (for instance, gh-ost).
+
+**To view the execution results, click the OSC Progress tab in the order details of the execution order.**
