@@ -240,11 +240,11 @@ const zhGetStartedNote = defineNoteConfig({
         },
         {
           text: 'RBAC',
-          link: '/usage/ms7zdn29/',
+          link: '/zh/usage/ms7zdn29/',
           items: [
             {
-              text: 'Permission Group',
-              link: '/usage/r9ztsdkl/',
+              text: '权限组',
+              link: '/zh/usage/r9ztsdkl/',
             },
           ]
         },
