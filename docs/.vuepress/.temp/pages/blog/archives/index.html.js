@@ -1,4 +1,4 @@
-import comp from "/root/guide/docs/.vuepress/.temp/pages/blog/archives/index.html.vue"
+import comp from "/Users/henryyee/PersonalProjects/guide/docs/.vuepress/.temp/pages/blog/archives/index.html.vue"
 const data = JSON.parse("{\"path\":\"/blog/archives/\",\"title\":\"Archives\",\"lang\":\"en-US\",\"frontmatter\":{\"lang\":\"en-US\",\"title\":\"Archives\",\"draft\":true},\"headers\":[],\"readingTime\":{\"minutes\":0,\"words\":0},\"filePathRelative\":null,\"type\":\"blog-archives\",\"bulletin\":false}")
 export { comp, data }
 

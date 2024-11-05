@@ -1,4 +1,4 @@
-import comp from "/root/guide/docs/.vuepress/.temp/pages/zh/about/euh91vwp/index.html.vue"
+import comp from "/Users/henryyee/PersonalProjects/guide/docs/.vuepress/.temp/pages/zh/about/euh91vwp/index.html.vue"
 const data = JSON.parse("{\"path\":\"/zh/about/euh91vwp/\",\"title\":\"移动端审核\",\"lang\":\"zh-CN\",\"frontmatter\":{\"title\":\"移动端审核\",\"createTime\":\"2024/11/04 16:34:50\",\"permalink\":\"/zh/about/euh91vwp/\"},\"headers\":[],\"readingTime\":{\"minutes\":0.09,\"words\":28},\"filePathRelative\":\"zh/notes/about/sponsor/mobile.md\",\"bulletin\":false}")
 export { comp, data }
 

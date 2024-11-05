@@ -14,7 +14,7 @@ config:
         -
           theme: brand
           text: Get Started
-          link: /zh/usage/ptbzchak/
+          link: /usage/ptbzchak/
         -
           theme: alt
           text: Github →

@@ -1,4 +1,4 @@
-import comp from "/root/guide/docs/.vuepress/.temp/pages/usage/xp6epr8b/index.html.vue"
+import comp from "/Users/henryyee/PersonalProjects/guide/docs/.vuepress/.temp/pages/usage/xp6epr8b/index.html.vue"
 const data = JSON.parse("{\"path\":\"/usage/xp6epr8b/\",\"title\":\"LDAP Configuration\",\"lang\":\"en-US\",\"frontmatter\":{\"title\":\"LDAP Configuration\",\"createTime\":\"2024/11/04 15:54:19\",\"permalink\":\"/usage/xp6epr8b/\"},\"headers\":[{\"level\":2,\"title\":\"LDAP User Attribute Mapping\",\"slug\":\"ldap-user-attribute-mapping\",\"link\":\"#ldap-user-attribute-mapping\",\"children\":[]}],\"readingTime\":{\"minutes\":0.72,\"words\":216},\"filePathRelative\":\"notes/usage/configure/ldap.md\",\"bulletin\":false}")
 export { comp, data }
 
